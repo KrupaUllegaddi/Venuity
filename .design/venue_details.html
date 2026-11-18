@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Main Auditorium - Venue Details | Venuity</title>
+<!-- Google Fonts: Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container-high": "#efe6e4",
+            "tertiary-fixed-dim": "#aecfb0",
+            "on-tertiary": "#ffffff",
+            "outline": "#8e7168",
+            "secondary-container": "#fea619",
+            "on-secondary-container": "#684000",
+            "inverse-primary": "#ffb59e",
+            "surface-tint": "#ad3300",
+            "on-primary-fixed": "#3a0b00",
+            "inverse-on-surface": "#f8efed",
+            "on-tertiary-fixed": "#04210d",
+            "surface-bright": "#fff8f6",
+            "outline-variant": "#e2bfb5",
+            "background": "#fff8f6",
+            "surface-variant": "#e9e1df",
+            "tertiary-container": "#81a084",
+            "surface-dim": "#e1d8d6",
+            "on-secondary": "#ffffff",
+            "secondary-fixed-dim": "#ffb95f",
+            "on-primary": "#ffffff",
+            "surface": "#fff8f6",
+            "on-tertiary-fixed-variant": "#314d36",
+            "error-container": "#ffdad6",
+            "primary": "#ad3300",
+            "on-tertiary-container": "#1a3621",
+            "inverse-surface": "#342f2e",
+            "surface-container-low": "#fbf2f0",
+            "primary-container": "#ff6835",
+            "on-background": "#1e1b1a",
+            "surface-container": "#f5ecea",
+            "surface-container-highest": "#e9e1df",
+            "on-error": "#ffffff",
+            "primary-fixed": "#ffdbd0",
+            "surface-container-lowest": "#ffffff",
+            "secondary-fixed": "#ffddb8",
+            "on-secondary-fixed": "#2a1700",
+            "error": "#ba1a1a",
+            "on-surface": "#1e1b1a",
+            "secondary": "#855300",
+            "on-primary-container": "#5e1700",
+            "primary-fixed-dim": "#ffb59e",
+            "tertiary": "#48654c",
+            "tertiary-fixed": "#caebcb",
+            "on-error-container": "#93000a",
+            "on-primary-fixed-variant": "#842500",
+            "on-secondary-fixed-variant": "#653e00",
+            "on-surface-variant": "#5a413a"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-sm": "0.5rem",
+            "space-lg": "1rem",
+            "margin": "1.25rem",
+            "space-xs": "0.25rem",
+            "space-md": "0.75rem",
+            "space-xl": "1.5rem",
+            "gutter": "0.75rem"
+          },
+          "fontFamily": {
+            "body-md": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "headline-xl": ["Plus Jakarta Sans"],
+            "label-lg": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "fontWeight": "500" }],
+            "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "600" }],
+            "headline-lg": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+            "headline-xl": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "600" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #f7eee9;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .material-symbols-outlined.fill-icon {
+      font-variation-settings: 'FILL' 1, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="min-h-screen flex justify-center items-start text-on-surface antialiased p-0 sm:py-6">
+<!-- Mobile Viewport Container (390px base width, responsive wrapper) -->
+<main class="w-full max-w-[390px] min-h-[844px] bg-background relative shadow-2xl overflow-hidden flex flex-col sm:rounded-3xl border border-outline-variant/30">
+<!-- HERO IMAGE & TOP BAR -->
+<div class="relative w-full h-[280px] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Modern collegiate auditorium with tiered amphitheater seating, fine mahogany finishes, professional stage proscenium, warm golden-hour ambient architectural downlights, crisp clean university lecture hall interior with high aesthetic polish and sunny warm collegiate atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtvMAPFd9hMJebsW-e5VYnCdAL6wZhi-Hg1EaZIgGqpzz5rdYz3r826Hwt0wRtCd0rLcS-pWLrK57Y76Ler7M8eCBgVT1teU4PF-eygRlqQ0W7WnPanZRviHvB7XqoAeXkIotLvNE43j_YYViFB59EVGk1PwP-v0qLI_01e0MARquVqdmmDMjl6yp49U1TBz9sUafQ3PSQhVTUEAFEcGc2z8466vhaanO30-tdRuB8PxGNzFpgdfrLWQ"/>
+<!-- Gradient overlay for legibility -->
+<div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/10 to-black/60 pointer-events-none"></div>
+<!-- Floating Nav Overlay Bar -->
+<header class="absolute top-0 left-0 right-0 pt-4 px-5 flex justify-between items-center z-10">
+<!-- Circular Back Button -->
+<a aria-label="Go Back" class="w-10 h-10 rounded-full bg-surface-container-lowest/90 backdrop-blur-md shadow-md flex items-center justify-center text-on-surface active:scale-95 transition-transform duration-150 border border-outline-variant/40" href="#">
+<span class="material-symbols-outlined text-[20px]">arrow_back</span>
+</a>
+<!-- Right Action Icons: Share & Favorite -->
+<div class="flex items-center gap-2">
+<button aria-label="Share Venue" class="w-10 h-10 rounded-full bg-surface-container-lowest/90 backdrop-blur-md shadow-md flex items-center justify-center text-on-surface active:scale-95 transition-transform duration-150 border border-outline-variant/40" type="button">
+<span class="material-symbols-outlined text-[19px]">share</span>
+</button>
+<button aria-label="Bookmark Venue" class="w-10 h-10 rounded-full bg-surface-container-lowest/90 backdrop-blur-md shadow-md flex items-center justify-center text-primary-container active:scale-95 transition-transform duration-150 border border-outline-variant/40" type="button">
+<span class="material-symbols-outlined text-[20px]">bookmark</span>
+</button>
+</div>
+</header>
+<!-- Floating Status Pill on Hero -->
+<div class="absolute bottom-6 left-5 z-10 flex items-center gap-2">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-lowest/95 backdrop-blur-md border border-tertiary-fixed shadow-sm font-label-sm text-label-sm text-tertiary">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+          Available Today
+        </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-md border border-outline-variant/40 font-label-sm text-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[13px]">verified</span>
+          Verified Space
+        </span>
+</div>
+</div>
+<!-- MAIN SCROLLABLE CONTENT (Card overlapping Hero) -->
+<div class="relative -mt-4 bg-background rounded-t-3xl border-t border-outline-variant/40 pt-5 px-5 pb-28 flex-1 overflow-y-auto z-20 space-y-5 shadow-[0_-8px_20px_rgba(41,37,36,0.04)]">
+<!-- Pull Bar Indicator -->
+<div class="w-10 h-1 bg-outline-variant/60 rounded-full mx-auto -mt-2 mb-2"></div>
+<!-- VENUE INFO CARD -->
+<section class="bg-surface-container-lowest rounded-2xl p-5 border border-outline-variant/50 shadow-[0_4px_16px_-2px_rgba(41,37,36,0.04),0_2px_6px_-1px_rgba(255,104,53,0.03)] space-y-3">
+<div class="flex items-start justify-between gap-2">
+<div>
+<span class="font-label-sm text-label-sm font-semibold tracking-wide text-primary-container uppercase">Facility No. A-101</span>
+<h1 class="font-headline-lg text-headline-lg text-on-surface mt-0.5">Main Auditorium</h1>
+</div>
+<span class="p-2 rounded-xl bg-surface-container-high/60 text-outline">
+<span class="material-symbols-outlined text-[22px]">theater_comedy</span>
+</span>
+</div>
+<!-- Meta Specification Pills -->
+<div class="grid grid-cols-3 gap-2 pt-1 border-t border-surface-container">
+<div class="flex flex-col items-center justify-center p-2 rounded-xl bg-surface-container-low border border-outline-variant/30 text-center">
+<span class="material-symbols-outlined text-outline text-[18px]">group</span>
+<span class="font-label-md text-label-md text-on-surface mt-1">500</span>
+<span class="font-label-sm text-label-sm text-outline">Capacity</span>
+</div>
+<div class="flex flex-col items-center justify-center p-2 rounded-xl bg-surface-container-low border border-outline-variant/30 text-center">
+<span class="material-symbols-outlined text-outline text-[18px]">domain</span>
+<span class="font-label-md text-label-md text-on-surface mt-1">Block A</span>
+<span class="font-label-sm text-label-sm text-outline">Complex</span>
+</div>
+<div class="flex flex-col items-center justify-center p-2 rounded-xl bg-surface-container-low border border-outline-variant/30 text-center">
+<span class="material-symbols-outlined text-outline text-[18px]">stairs</span>
+<span class="font-label-md text-label-md text-on-surface mt-1">Ground</span>
+<span class="font-label-sm text-label-sm text-outline">Floor Level</span>
+</div>
+</div>
+</section>
+<!-- KEY FACILITIES -->
+<section class="space-y-3">
+<div class="flex justify-between items-center">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Key Facilities</h2>
+<span class="font-label-sm text-label-sm text-outline">5 amenities equipped</span>
+</div>
+<!-- Facility Chips Grid -->
+<div class="grid grid-cols-2 gap-2.5">
+<!-- Facility Item: Projector -->
+<div class="flex items-center gap-3 p-3 bg-surface-container-lowest rounded-xl border border-outline-variant/40 shadow-sm">
+<div class="w-9 h-9 rounded-lg bg-primary-fixed/40 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[19px]">videocam</span>
+</div>
+<div>
+<p class="font-label-lg text-label-lg text-on-surface leading-tight">4K Projector</p>
+<p class="font-label-sm text-label-sm text-outline">Dual Screens</p>
+</div>
+</div>
+<!-- Facility Item: AC -->
+<div class="flex items-center gap-3 p-3 bg-surface-container-lowest rounded-xl border border-outline-variant/40 shadow-sm">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[19px]">ac_unit</span>
+</div>
+<div>
+<p class="font-label-lg text-label-lg text-on-surface leading-tight">Central AC</p>
+<p class="font-label-sm text-label-sm text-outline">HVAC Zoned</p>
+</div>
+</div>
+<!-- Facility Item: Wi-Fi -->
+<div class="flex items-center gap-3 p-3 bg-surface-container-lowest rounded-xl border border-outline-variant/40 shadow-sm">
+<div class="w-9 h-9 rounded-lg bg-tertiary-fixed/60 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[19px]">wifi</span>
+</div>
+<div>
+<p class="font-label-lg text-label-lg text-on-surface leading-tight">High-Speed Wi-Fi</p>
+<p class="font-label-sm text-label-sm text-outline">Campus 1 Gbps</p>
+</div>
+</div>
+<!-- Facility Item: Stage -->
+<div class="flex items-center gap-3 p-3 bg-surface-container-lowest rounded-xl border border-outline-variant/40 shadow-sm">
+<div class="w-9 h-9 rounded-lg bg-secondary-fixed/50 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[19px]">podium</span>
+</div>
+<div>
+<p class="font-label-lg text-label-lg text-on-surface leading-tight">Elevated Stage</p>
+<p class="font-label-sm text-label-sm text-outline">With Podium</p>
+</div>
+</div>
+<!-- Facility Item: Sound System (Spans full width for asymmetric balance) -->
+<div class="col-span-2 flex items-center gap-3 p-3 bg-surface-container-lowest rounded-xl border border-outline-variant/40 shadow-sm">
+<div class="w-9 h-9 rounded-lg bg-surface-container-high flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[19px]">speaker</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-center">
+<p class="font-label-lg text-label-lg text-on-surface">Surround Sound System</p>
+<span class="font-label-sm text-label-sm text-tertiary font-medium">4 Wireless Mics</span>
+</div>
+<p class="font-body-sm text-body-sm text-outline">Acoustic paneling calibrated for high-clarity voice delivery</p>
+</div>
+</div>
+</div>
+</section>
+<!-- ABOUT SECTION -->
+<section class="space-y-2">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">About Venue</h2>
+<div class="p-4 bg-surface-container-lowest rounded-2xl border border-outline-variant/40 shadow-sm space-y-3">
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            Spacious auditorium with modern audio-visual facilities. Ideal for seminars, conferences, academic symposiums, and large campus events. Equipped with tier seating for clear sightlines from every angle.
+          </p>
+<!-- Additional Information Chips -->
+<div class="pt-2 border-t border-surface-container flex flex-wrap gap-2">
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container border border-outline-variant/30">
+<span class="material-symbols-outlined text-[15px] text-outline">meeting_room</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Main Hall 101</span>
+</div>
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container border border-outline-variant/30">
+<span class="material-symbols-outlined text-[15px] text-tertiary">accessible</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Ramp Access (Accessible)</span>
+</div>
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container border border-outline-variant/30">
+<span class="material-symbols-outlined text-[15px] text-outline">emergency</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Emergency Exits x4</span>
+</div>
+</div>
+</div>
+</section>
+<!-- UPCOMING TODAY SECTION -->
+<section class="space-y-2.5">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-2">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Upcoming Today</h2>
+<span class="w-2 h-2 rounded-full bg-secondary-container"></span>
+</div>
+<a class="font-label-md text-label-md text-primary-container flex items-center gap-0.5 hover:underline" href="#">
+            Full Schedule
+            <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+</a>
+</div>
+<!-- Compact Event Card -->
+<div class="bg-surface-container-lowest rounded-2xl p-4 border border-outline-variant/50 shadow-sm flex items-center justify-between gap-3">
+<div class="flex items-center gap-3">
+<!-- Time Indicator Pillar -->
+<div class="w-12 h-12 rounded-xl bg-surface-container flex flex-col items-center justify-center text-center border border-outline-variant/30">
+<span class="font-label-sm text-[10px] uppercase font-bold text-outline">OCT</span>
+<span class="font-headline-sm text-headline-sm text-on-surface leading-none font-bold">14</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm font-semibold text-primary">CSE Department</span>
+<span class="text-outline text-[10px]">•</span>
+<span class="font-label-sm text-label-sm text-outline">Tech Talk</span>
+</div>
+<h3 class="font-headline-sm text-body-lg font-bold text-on-surface mt-0.5">Keynote: AI in Robotics</h3>
+<p class="font-body-sm text-body-sm text-outline flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+                10:00 AM – 12:00 PM
+              </p>
+</div>
+</div>
+<!-- Status Badge -->
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-tertiary-fixed/40 border border-tertiary-fixed font-label-sm text-label-sm text-tertiary font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+            Confirmed
+          </span>
+</div>
+<!-- Slot Availability Callout -->
+<div class="p-3 bg-surface-container-low rounded-xl border border-outline-variant/30 flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[18px] text-tertiary">event_available</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex-1">
+            Free afternoon slots open from <strong class="text-on-surface font-semibold">1:00 PM to 7:00 PM</strong>.
+          </p>
+</div>
+</section>
+</div>
+<!-- BOTTOM STICKY ACTION BAR (Task-focused footer with primary CTA) -->
+<footer class="fixed bottom-0 left-0 right-0 max-w-[390px] mx-auto bg-surface-container-lowest/95 backdrop-blur-md border-t border-outline-variant p-4 z-30 shadow-[0_-4px_20px_0_rgba(41,37,36,0.06)] flex items-center justify-between gap-4">
+<!-- Price / Capacity Helper Info -->
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline">Campus Access</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold leading-tight">Free for Staff</span>
+<span class="font-label-sm text-[11px] text-tertiary font-medium flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[12px]">check_circle</span>
+          Immediate Approval
+        </span>
+</div>
+<!-- Primary CTA: Sunset Orange Book Now button with right arrow -->
+<a class="flex-1 h-12 rounded-xl bg-primary-container text-on-primary font-label-lg text-label-lg flex items-center justify-center gap-2 shadow-md shadow-primary-container/25 hover:bg-primary active:scale-95 transition-all duration-150" href="#">
+<span>Book Now</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</footer>
+</main>
+</body></html>

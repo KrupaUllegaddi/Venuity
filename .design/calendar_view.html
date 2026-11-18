@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Venuity - Calendar</title>
+<!-- Google Fonts: Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config Verbatim -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container-high": "#efe6e4",
+            "tertiary-fixed-dim": "#aecfb0",
+            "on-tertiary": "#ffffff",
+            "outline": "#8e7168",
+            "secondary-container": "#fea619",
+            "on-secondary-container": "#684000",
+            "inverse-primary": "#ffb59e",
+            "surface-tint": "#ad3300",
+            "on-primary-fixed": "#3a0b00",
+            "inverse-on-surface": "#f8efed",
+            "on-tertiary-fixed": "#04210d",
+            "surface-bright": "#fff8f6",
+            "outline-variant": "#e2bfb5",
+            "background": "#fff8f6",
+            "surface-variant": "#e9e1df",
+            "tertiary-container": "#81a084",
+            "surface-dim": "#e1d8d6",
+            "on-secondary": "#ffffff",
+            "secondary-fixed-dim": "#ffb95f",
+            "on-primary": "#ffffff",
+            "surface": "#fff8f6",
+            "on-tertiary-fixed-variant": "#314d36",
+            "error-container": "#ffdad6",
+            "primary": "#ad3300",
+            "on-tertiary-container": "#1a3621",
+            "inverse-surface": "#342f2e",
+            "surface-container-low": "#fbf2f0",
+            "primary-container": "#ff6835",
+            "on-background": "#1e1b1a",
+            "surface-container": "#f5ecea",
+            "surface-container-highest": "#e9e1df",
+            "on-error": "#ffffff",
+            "primary-fixed": "#ffdbd0",
+            "surface-container-lowest": "#ffffff",
+            "secondary-fixed": "#ffddb8",
+            "on-secondary-fixed": "#2a1700",
+            "error": "#ba1a1a",
+            "on-surface": "#1e1b1a",
+            "secondary": "#855300",
+            "on-primary-container": "#5e1700",
+            "primary-fixed-dim": "#ffb59e",
+            "tertiary": "#48654c",
+            "tertiary-fixed": "#caebcb",
+            "on-error-container": "#93000a",
+            "on-primary-fixed-variant": "#842500",
+            "on-secondary-fixed-variant": "#653e00",
+            "on-surface-variant": "#5a413a"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-sm": "0.5rem",
+            "space-lg": "1rem",
+            "margin": "1.25rem",
+            "space-xs": "0.25rem",
+            "space-md": "0.75rem",
+            "space-xl": "1.5rem",
+            "gutter": "0.75rem"
+          },
+          "fontFamily": {
+            "body-md": [
+              "Plus Jakarta Sans"
+            ],
+            "headline-sm": [
+              "Plus Jakarta Sans"
+            ],
+            "body-sm": [
+              "Plus Jakarta Sans"
+            ],
+            "body-lg": [
+              "Plus Jakarta Sans"
+            ],
+            "label-sm": [
+              "Plus Jakarta Sans"
+            ],
+            "headline-md": [
+              "Plus Jakarta Sans"
+            ],
+            "label-md": [
+              "Plus Jakarta Sans"
+            ],
+            "headline-lg": [
+              "Plus Jakarta Sans"
+            ],
+            "headline-xl": [
+              "Plus Jakarta Sans"
+            ],
+            "label-lg": [
+              "Plus Jakarta Sans"
+            ]
+          },
+          "fontSize": {
+            "body-md": [
+              "14px",
+              {
+                "lineHeight": "20px",
+                "fontWeight": "400"
+              }
+            ],
+            "headline-sm": [
+              "18px",
+              {
+                "lineHeight": "24px",
+                "fontWeight": "600"
+              }
+            ],
+            "body-sm": [
+              "13px",
+              {
+                "lineHeight": "18px",
+                "fontWeight": "400"
+              }
+            ],
+            "body-lg": [
+              "16px",
+              {
+                "lineHeight": "24px",
+                "fontWeight": "400"
+              }
+            ],
+            "label-sm": [
+              "11px",
+              {
+                "lineHeight": "14px",
+                "fontWeight": "500"
+              }
+            ],
+            "headline-md": [
+              "20px",
+              {
+                "lineHeight": "28px",
+                "fontWeight": "600"
+              }
+            ],
+            "label-md": [
+              "12px",
+              {
+                "lineHeight": "16px",
+                "fontWeight": "600"
+              }
+            ],
+            "headline-lg": [
+              "24px",
+              {
+                "lineHeight": "32px",
+                "fontWeight": "700"
+              }
+            ],
+            "headline-xl": [
+              "32px",
+              {
+                "lineHeight": "40px",
+                "fontWeight": "700"
+              }
+            ],
+            "label-lg": [
+              "14px",
+              {
+                "lineHeight": "20px",
+                "fontWeight": "600"
+              }
+            ]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body-md text-on-surface antialiased min-h-screen flex justify-center selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- Mobile Viewport Shell (390px x 844px base container) -->
+<main class="w-full max-w-md bg-surface min-h-screen relative flex flex-col pb-24 shadow-2xl">
+<!-- iOS Status Bar Simulation -->
+<header class="w-full pt-3 px-6 flex justify-between items-center text-on-surface font-label-md select-none">
+<span class="font-semibold text-label-md font-label-md tracking-tight">9:41</span>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm font-bold" data-icon="signal_cellular_alt">signal_cellular_alt</span>
+<span class="material-symbols-outlined text-sm font-bold" data-icon="wifi">wifi</span>
+<span class="material-symbols-outlined text-base font-bold" data-icon="battery_full">battery_full</span>
+</div>
+</header>
+<!-- Calendar Screen Top Bar -->
+<section class="flex justify-between items-center px-5 py-3">
+<h1 class="font-headline-lg text-headline-lg font-bold text-on-surface tracking-tight">Calendar</h1>
+<div class="flex items-center gap-2">
+<button aria-label="Search events" class="w-10 h-10 rounded-full bg-surface-container-lowest border border-outline-variant/60 flex items-center justify-center text-on-surface hover:bg-surface-container transition-colors shadow-sm active:scale-95 duration-150">
+<span class="material-symbols-outlined text-headline-sm" data-icon="search">search</span>
+</button>
+<button aria-label="Filter events" class="w-10 h-10 rounded-full bg-surface-container-lowest border border-outline-variant/60 flex items-center justify-center text-on-surface hover:bg-surface-container transition-colors shadow-sm active:scale-95 duration-150">
+<span class="material-symbols-outlined text-headline-sm" data-icon="tune">tune</span>
+</button>
+</div>
+</section>
+<!-- Segmented View Mode Selector -->
+<section class="px-5 pt-1 pb-3">
+<div class="bg-surface-container p-1 rounded-xl flex items-center justify-between text-body-sm font-body-sm">
+<button class="flex-1 py-1.5 rounded-lg text-center font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors">
+          Day
+        </button>
+<button class="flex-1 py-1.5 rounded-lg text-center font-label-md text-label-md bg-primary-container text-on-primary shadow-sm font-semibold transition-transform duration-150">
+          Week
+        </button>
+<button class="flex-1 py-1.5 rounded-lg text-center font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors">
+          Month
+        </button>
+</div>
+</section>
+<!-- 7-Day Horizontal Strip / Date Selector -->
+<section class="px-5 py-2.5">
+<div class="flex items-center justify-between gap-1 overflow-x-auto no-scrollbar py-1">
+<!-- Mon 12 -->
+<button class="flex flex-col items-center justify-center min-w-[42px] py-2 px-1 rounded-xl hover:bg-surface-container transition-colors">
+<span class="font-label-sm text-label-sm text-outline font-medium">Mon</span>
+<span class="font-label-lg text-label-lg font-bold text-on-surface mt-1">12</span>
+</button>
+<!-- Tue 13 -->
+<button class="flex flex-col items-center justify-center min-w-[42px] py-2 px-1 rounded-xl hover:bg-surface-container transition-colors">
+<span class="font-label-sm text-label-sm text-outline font-medium">Tue</span>
+<span class="font-label-lg text-label-lg font-bold text-on-surface mt-1">13</span>
+</button>
+<!-- Wed 14 -->
+<button class="flex flex-col items-center justify-center min-w-[42px] py-2 px-1 rounded-xl hover:bg-surface-container transition-colors">
+<span class="font-label-sm text-label-sm text-outline font-medium">Wed</span>
+<span class="font-label-lg text-label-lg font-bold text-on-surface mt-1">14</span>
+</button>
+<!-- Thu 15 (Active) -->
+<button class="flex flex-col items-center justify-center min-w-[44px] py-2 px-1.5 rounded-xl bg-primary-container text-on-primary shadow-md transform scale-105 active:scale-100 transition-transform">
+<span class="font-label-sm text-label-sm font-medium text-white/90">Thu</span>
+<span class="font-label-lg text-label-lg font-bold text-white mt-1">15</span>
+</button>
+<!-- Fri 16 -->
+<button class="flex flex-col items-center justify-center min-w-[42px] py-2 px-1 rounded-xl hover:bg-surface-container transition-colors">
+<span class="font-label-sm text-label-sm text-outline font-medium">Fri</span>
+<span class="font-label-lg text-label-lg font-bold text-on-surface mt-1">16</span>
+</button>
+<!-- Sat 17 -->
+<button class="flex flex-col items-center justify-center min-w-[42px] py-2 px-1 rounded-xl hover:bg-surface-container transition-colors">
+<span class="font-label-sm text-label-sm text-outline font-medium">Sat</span>
+<span class="font-label-lg text-label-lg font-bold text-on-surface mt-1">17</span>
+</button>
+<!-- Sun 18 -->
+<button class="flex flex-col items-center justify-center min-w-[42px] py-2 px-1 rounded-xl hover:bg-surface-container transition-colors">
+<span class="font-label-sm text-label-sm text-outline font-medium">Sun</span>
+<span class="font-label-lg text-label-lg font-bold text-on-surface mt-1">18</span>
+</button>
+</div>
+</section>
+<!-- Schedule Header Context -->
+<section class="px-5 pt-3 pb-1 flex justify-between items-center">
+<div class="flex items-center gap-2">
+<span class="font-label-lg text-label-lg font-bold text-on-surface">Thursday, September 15</span>
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+</div>
+<span class="font-label-sm text-label-sm text-outline font-medium">4 Reservations</span>
+</section>
+<!-- Hourly Vertical Timeline Canvas -->
+<section class="px-4 py-2 flex-1">
+<div class="relative flex flex-col space-y-4">
+<!-- 9:00 AM Slot -->
+<div class="flex items-start gap-3">
+<div class="w-16 pt-0.5 text-right font-label-sm text-label-sm font-semibold text-outline tracking-tight">
+            9:00 AM
+          </div>
+<div class="flex-1 relative">
+<!-- Event 1: Faculty Development Program -->
+<article class="bg-surface-container-low border border-outline-variant/80 rounded-xl p-3 shadow-[0_2px_8px_-2px_rgba(255,104,53,0.08)] hover:border-primary-container transition-all cursor-pointer">
+<div class="flex items-start justify-between">
+<div>
+<div class="flex items-center gap-1.5 mb-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+<span class="font-label-sm text-label-sm font-semibold text-primary">9:00 AM – 11:00 AM</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm font-bold text-on-surface leading-snug">Faculty Development Program</h2>
+<div class="flex items-center gap-2 mt-2 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-sm text-primary" data-icon="apartment">apartment</span>
+<span>Main Auditorium · CSE</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline-variant text-lg" data-icon="more_vert">more_vert</span>
+</div>
+<div class="mt-2.5 pt-2 border-t border-outline-variant/30 flex items-center justify-between font-label-sm text-label-sm text-outline">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-xs" data-icon="group">group</span>
+                  120 Attending
+                </span>
+<span class="bg-surface-container-lowest px-2 py-0.5 rounded-full text-primary font-semibold border border-outline-variant/50">
+                  Confirmed
+                </span>
+</div>
+</article>
+</div>
+</div>
+<!-- 10:00 AM Line -->
+<div class="flex items-center gap-3">
+<div class="w-16 text-right font-label-sm text-label-sm font-medium text-outline/60">
+            10:00 AM
+          </div>
+<div class="flex-1 border-t border-dashed border-outline-variant/60"></div>
+</div>
+<!-- 11:00 AM Slot -->
+<div class="flex items-start gap-3">
+<div class="w-16 pt-0.5 text-right font-label-sm text-label-sm font-semibold text-outline tracking-tight">
+            11:00 AM
+          </div>
+<div class="flex-1 relative">
+<!-- Event 2: Leadership Workshop -->
+<article class="bg-surface-container rounded-xl border border-outline-variant/70 p-3 shadow-sm hover:border-outline transition-all cursor-pointer">
+<div class="flex items-start justify-between">
+<div>
+<div class="flex items-center gap-1.5 mb-1">
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+<span class="font-label-sm text-label-sm font-semibold text-on-surface-variant">11:00 AM – 1:00 PM</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm font-bold text-on-surface leading-snug">Leadership Workshop</h2>
+<div class="flex items-center gap-2 mt-2 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-sm text-outline" data-icon="apartment">apartment</span>
+<span>Gallery 1 · MBA</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline-variant text-lg" data-icon="more_vert">more_vert</span>
+</div>
+<div class="mt-2.5 pt-2 border-t border-outline-variant/30 flex items-center justify-between font-label-sm text-label-sm text-outline">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-xs" data-icon="group">group</span>
+                  45 Attending
+                </span>
+<span class="bg-surface-container-lowest px-2 py-0.5 rounded-full text-on-surface-variant font-semibold border border-outline-variant/50">
+                  Priority CSE
+                </span>
+</div>
+</article>
+</div>
+</div>
+<!-- 12:00 PM Line -->
+<div class="flex items-center gap-3">
+<div class="w-16 text-right font-label-sm text-label-sm font-medium text-outline/60">
+            12:00 PM
+          </div>
+<div class="flex-1 border-t border-dashed border-outline-variant/60"></div>
+</div>
+<!-- 1:00 PM Line (Lunch/Break) -->
+<div class="flex items-center gap-3">
+<div class="w-16 text-right font-label-sm text-label-sm font-medium text-outline/60">
+            1:00 PM
+          </div>
+<div class="flex-1 flex items-center gap-2">
+<div class="flex-1 border-t border-outline-variant/40"></div>
+<span class="font-label-sm text-label-sm text-outline/70 italic px-1">Maintenance / Recess</span>
+<div class="flex-1 border-t border-outline-variant/40"></div>
+</div>
+</div>
+<!-- 2:00 PM Slot -->
+<div class="flex items-start gap-3">
+<div class="w-16 pt-0.5 text-right font-label-sm text-label-sm font-semibold text-outline tracking-tight">
+            2:00 PM
+          </div>
+<div class="flex-1 relative">
+<!-- Event 3: Guest Lecture -->
+<article class="bg-surface-bright rounded-xl border border-secondary-fixed-dim/70 p-3 shadow-sm hover:border-secondary-container transition-all cursor-pointer">
+<div class="flex items-start justify-between">
+<div>
+<div class="flex items-center gap-1.5 mb-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-container"></span>
+<span class="font-label-sm text-label-sm font-semibold text-secondary">2:00 PM – 4:00 PM</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm font-bold text-on-surface leading-snug">Guest Lecture</h2>
+<div class="flex items-center gap-2 mt-2 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-sm text-secondary" data-icon="apartment">apartment</span>
+<span>Seminar Hall B · MCA</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline-variant text-lg" data-icon="more_vert">more_vert</span>
+</div>
+<div class="mt-2.5 pt-2 border-t border-outline-variant/30 flex items-center justify-between font-label-sm text-label-sm text-outline">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-xs" data-icon="record_voice_over">record_voice_over</span>
+                  Dr. Rajesh V.
+                </span>
+<span class="bg-secondary-fixed/40 px-2 py-0.5 rounded-full text-secondary font-semibold border border-secondary-fixed-dim/40">
+                  Hybrid
+                </span>
+</div>
+</article>
+</div>
+</div>
+<!-- 3:00 PM Line -->
+<div class="flex items-center gap-3">
+<div class="w-16 text-right font-label-sm text-label-sm font-medium text-outline/60">
+            3:00 PM
+          </div>
+<div class="flex-1 border-t border-dashed border-outline-variant/60"></div>
+</div>
+<!-- 4:00 PM Slot -->
+<div class="flex items-start gap-3">
+<div class="w-16 pt-0.5 text-right font-label-sm text-label-sm font-semibold text-outline tracking-tight">
+            4:00 PM
+          </div>
+<div class="flex-1 relative">
+<!-- Event 4: Project Expo -->
+<article class="bg-surface-container-low rounded-xl border border-tertiary-fixed-dim/80 p-3 shadow-sm hover:border-tertiary transition-all cursor-pointer">
+<div class="flex items-start justify-between">
+<div>
+<div class="flex items-center gap-1.5 mb-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+<span class="font-label-sm text-label-sm font-semibold text-tertiary">4:00 PM – 6:00 PM</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm font-bold text-on-surface leading-snug">Project Expo</h2>
+<div class="flex items-center gap-2 mt-2 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-sm text-tertiary" data-icon="apartment">apartment</span>
+<span>Gallery 2 · ECE</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline-variant text-lg" data-icon="more_vert">more_vert</span>
+</div>
+<div class="mt-2.5 pt-2 border-t border-outline-variant/30 flex items-center justify-between font-label-sm text-label-sm text-outline">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-xs" data-icon="devices">devices</span>
+                  Lab Equipment Required
+                </span>
+<span class="bg-tertiary-fixed/50 px-2 py-0.5 rounded-full text-tertiary font-semibold border border-tertiary-fixed-dim">
+                  Open Entry
+                </span>
+</div>
+</article>
+</div>
+</div>
+<!-- 5:00 PM Line -->
+<div class="flex items-center gap-3 pb-6">
+<div class="w-16 text-right font-label-sm text-label-sm font-medium text-outline/60">
+            5:00 PM
+          </div>
+<div class="flex-1 border-t border-dashed border-outline-variant/60"></div>
+</div>
+</div>
+</section>
+<!-- Floating Action Button (FAB) -->
+<div class="fixed bottom-20 right-6 z-40 max-w-md mx-auto">
+<button aria-label="Add new calendar event or booking" class="w-14 h-14 rounded-full bg-primary-container text-on-primary flex items-center justify-center shadow-lg shadow-primary-container/30 hover:scale-105 active:scale-95 transition-all duration-150 group">
+<span class="material-symbols-outlined text-3xl transition-transform duration-200 group-hover:rotate-90" data-icon="add">add</span>
+</button>
+</div>
+<!-- Bottom Navigation Bar (Docked Semantic Shared Component) -->
+<!-- JSON Schema active navigation mapped to 'Calendar' -->
+<nav class="fixed bottom-0 left-0 right-0 w-full z-50 flex justify-around items-center px-3 py-2 bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-outline-variant max-w-md mx-auto shadow-[0_-4px_20px_0_rgba(41,37,36,0.05)]">
+<!-- Home -->
+<a class="flex flex-col items-center justify-center text-outline dark:text-outline gap-1 py-1 hover:text-primary transition-colors active:scale-95" href="#">
+<span class="material-symbols-outlined text-2xl" data-icon="home">home</span>
+<span class="font-label-sm text-label-sm font-medium">Home</span>
+</a>
+<!-- Venues -->
+<a class="flex flex-col items-center justify-center text-outline dark:text-outline gap-1 py-1 hover:text-primary transition-colors active:scale-95" href="#">
+<span class="material-symbols-outlined text-2xl" data-icon="apartment">apartment</span>
+<span class="font-label-sm text-label-sm font-medium">Venues</span>
+</a>
+<!-- Bookings -->
+<a class="flex flex-col items-center justify-center text-outline dark:text-outline gap-1 py-1 hover:text-primary transition-colors active:scale-95" href="#">
+<span class="material-symbols-outlined text-2xl" data-icon="event_available">event_available</span>
+<span class="font-label-sm text-label-sm font-medium">Bookings</span>
+</a>
+<!-- Calendar (ACTIVE) -->
+<a class="flex flex-col items-center justify-center text-primary dark:text-primary font-semibold gap-1 py-1 active:scale-95" href="#">
+<span class="material-symbols-outlined text-2xl text-primary" data-icon="calendar_month">calendar_month</span>
+<span class="font-label-sm text-label-sm font-semibold text-primary">Calendar</span>
+</a>
+<!-- More -->
+<a class="flex flex-col items-center justify-center text-outline dark:text-outline gap-1 py-1 hover:text-primary transition-colors active:scale-95" href="#">
+<span class="material-symbols-outlined text-2xl" data-icon="menu">menu</span>
+<span class="font-label-sm text-label-sm font-medium">More</span>
+</a>
+</nav>
+</main>
+</body></html>

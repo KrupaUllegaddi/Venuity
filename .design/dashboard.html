@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Venuity - Smart Campus Venue Management</title>
+<!-- Google Fonts: Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container-high": "#efe6e4",
+            "tertiary-fixed-dim": "#aecfb0",
+            "on-tertiary": "#ffffff",
+            "outline": "#8e7168",
+            "secondary-container": "#fea619",
+            "on-secondary-container": "#684000",
+            "inverse-primary": "#ffb59e",
+            "surface-tint": "#ad3300",
+            "on-primary-fixed": "#3a0b00",
+            "inverse-on-surface": "#f8efed",
+            "on-tertiary-fixed": "#04210d",
+            "surface-bright": "#fff8f6",
+            "outline-variant": "#e2bfb5",
+            "background": "#fff8f6",
+            "surface-variant": "#e9e1df",
+            "tertiary-container": "#81a084",
+            "surface-dim": "#e1d8d6",
+            "on-secondary": "#ffffff",
+            "secondary-fixed-dim": "#ffb95f",
+            "on-primary": "#ffffff",
+            "surface": "#fff8f6",
+            "on-tertiary-fixed-variant": "#314d36",
+            "error-container": "#ffdad6",
+            "primary": "#ad3300",
+            "on-tertiary-container": "#1a3621",
+            "inverse-surface": "#342f2e",
+            "surface-container-low": "#fbf2f0",
+            "primary-container": "#ff6835",
+            "on-background": "#1e1b1a",
+            "surface-container": "#f5ecea",
+            "surface-container-highest": "#e9e1df",
+            "on-error": "#ffffff",
+            "primary-fixed": "#ffdbd0",
+            "surface-container-lowest": "#ffffff",
+            "secondary-fixed": "#ffddb8",
+            "on-secondary-fixed": "#2a1700",
+            "error": "#ba1a1a",
+            "on-surface": "#1e1b1a",
+            "secondary": "#855300",
+            "on-primary-container": "#5e1700",
+            "primary-fixed-dim": "#ffb59e",
+            "tertiary": "#48654c",
+            "tertiary-fixed": "#caebcb",
+            "on-error-container": "#93000a",
+            "on-primary-fixed-variant": "#842500",
+            "on-secondary-fixed-variant": "#653e00",
+            "on-surface-variant": "#5a413a"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "2xl": "1rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-sm": "0.5rem",
+            "space-lg": "1rem",
+            "margin": "1.25rem",
+            "space-xs": "0.25rem",
+            "space-md": "0.75rem",
+            "space-xl": "1.5rem",
+            "gutter": "0.75rem"
+          },
+          "fontFamily": {
+            "body-md": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "headline-xl": ["Plus Jakarta Sans"],
+            "label-lg": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "fontWeight": "500" }],
+            "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "600" }],
+            "headline-lg": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+            "headline-xl": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .material-symbols-outlined.fill-icon {
+      font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    body {
+      background-color: #f7ede8;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="h-full flex items-center justify-center p-0 sm:p-4 text-on-surface antialiased font-body-md text-body-md selection:bg-primary-container selection:text-on-primary">
+<!-- Mobile Viewport Frame (390 x 844 approx) -->
+<main class="w-full max-w-[390px] h-full sm:h-[844px] bg-surface relative flex flex-col overflow-hidden sm:rounded-[36px] sm:shadow-[0_24px_50px_-12px_rgba(41,37,36,0.18)] border border-outline-variant/30">
+<!-- iOS Status Bar (9:41) -->
+<header class="w-full px-7 pt-3 pb-1 flex justify-between items-center text-on-surface shrink-0 z-30 select-none">
+<span class="font-headline-sm text-headline-sm font-semibold text-[14px] tracking-tight">9:41</span>
+<div class="flex items-center space-x-1.5 text-on-surface">
+<span class="material-symbols-outlined text-[17px]">signal_cellular_4_bar</span>
+<span class="material-symbols-outlined text-[17px]">wifi</span>
+<span class="material-symbols-outlined text-[20px]">battery_full</span>
+</div>
+</header>
+<!-- Shared TopAppBar Component -->
+<nav class="flex justify-between items-center w-full px-5 py-3 max-w-md mx-auto bg-surface shrink-0 z-20">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container text-[26px]">account_balance</span>
+<span class="font-headline-md text-headline-md font-bold text-on-surface tracking-tight">Venuity</span>
+</div>
+<div class="flex items-center gap-3">
+<button aria-label="Notifications" class="w-9 h-9 rounded-full flex items-center justify-center text-on-surface hover:bg-surface-container-high active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[22px]">notifications</span>
+</button>
+<!-- User Profile Avatar Pill -->
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-headline-sm text-[12px] font-bold shadow-sm select-none">
+          AK
+        </div>
+</div>
+</nav>
+<!-- Scrollable Canvas / Dashboard Body -->
+<div class="flex-1 overflow-y-auto px-5 pb-24 pt-1 space-y-5 scrollbar-none">
+<!-- Greeting Section -->
+<section class="space-y-0.5">
+<p class="font-body-sm text-body-sm text-outline font-medium tracking-wide">Good Morning,</p>
+<h1 class="font-headline-md text-headline-md font-bold text-on-surface tracking-tight">Dr. Arun Kumar</h1>
+<p class="font-label-md text-label-md text-outline font-medium">CSE Department</p>
+</section>
+<!-- Metric Cards (2x2 Grid) -->
+<section aria-label="Venue Metric Highlights" class="grid grid-cols-2 gap-3">
+<!-- 1. Total Venues -->
+<article class="bg-surface-container-lowest rounded-2xl p-3.5 border border-[#E7DED4] shadow-[0_4px_16px_-2px_rgba(41,37,36,0.04),0_2px_6px_-1px_rgba(255,104,53,0.03)] flex flex-col justify-between">
+<div class="flex items-center justify-between mb-2">
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">account_balance</span>
+</div>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-outline block mb-0.5">Total Venues</span>
+<span class="font-headline-lg text-headline-lg font-bold text-on-surface leading-none">12</span>
+</div>
+</article>
+<!-- 2. Available -->
+<article class="bg-surface-container-lowest rounded-2xl p-3.5 border border-[#E7DED4] shadow-[0_4px_16px_-2px_rgba(41,37,36,0.04),0_2px_6px_-1px_rgba(255,104,53,0.03)] flex flex-col justify-between">
+<div class="flex items-center justify-between mb-2">
+<div class="w-10 h-10 rounded-full bg-[#EDF4EE] flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[20px]">check_circle</span>
+</div>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-outline block mb-0.5">Available</span>
+<span class="font-headline-lg text-headline-lg font-bold text-on-surface leading-none">5</span>
+</div>
+</article>
+<!-- 3. Occupied -->
+<article class="bg-surface-container-lowest rounded-2xl p-3.5 border border-[#E7DED4] shadow-[0_4px_16px_-2px_rgba(41,37,36,0.04),0_2px_6px_-1px_rgba(255,104,53,0.03)] flex flex-col justify-between">
+<div class="flex items-center justify-between mb-2">
+<div class="w-10 h-10 rounded-full bg-[#FDF1F1] flex items-center justify-center text-[#D66F6F]">
+<span class="material-symbols-outlined text-[20px]">person</span>
+</div>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-outline block mb-0.5">Occupied</span>
+<span class="font-headline-lg text-headline-lg font-bold text-on-surface leading-none">6</span>
+</div>
+</article>
+<!-- 4. Pending -->
+<article class="bg-surface-container-lowest rounded-2xl p-3.5 border border-[#E7DED4] shadow-[0_4px_16px_-2px_rgba(41,37,36,0.04),0_2px_6px_-1px_rgba(255,104,53,0.03)] flex flex-col justify-between">
+<div class="flex items-center justify-between mb-2">
+<div class="w-10 h-10 rounded-full bg-[#FEF3C7] flex items-center justify-center text-[#D97706]">
+<span class="material-symbols-outlined text-[20px]">schedule</span>
+</div>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-outline block mb-0.5">Pending</span>
+<span class="font-headline-lg text-headline-lg font-bold text-on-surface leading-none">3</span>
+</div>
+</article>
+</section>
+<!-- Today's Venue Overview Section -->
+<section class="space-y-3">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-sm text-[16px] font-bold text-on-surface">Today's Venue Overview</h2>
+<a class="font-label-lg text-primary-container hover:text-primary transition-colors flex items-center gap-0.5 active:scale-95" href="#">
+<span>View All</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</a>
+</div>
+<!-- Venue Summary Cards List -->
+<div class="space-y-2.5">
+<!-- Venue Card 1: Main Auditorium -->
+<article class="bg-surface-container-lowest rounded-xl border border-[#E7DED4] p-3 shadow-sm flex items-center gap-3 hover:border-primary-container/40 transition-all">
+<img alt="Main Auditorium" class="w-[62px] h-[62px] rounded-lg object-cover shrink-0 bg-surface-container" data-alt="A grand collegiate auditorium venue with plush tiered seating, polished wooden stage flooring, warm architectural spotlights, and a modern high-resolution projector screen in an inviting university hall illuminated with golden atmospheric ambient light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCS6Skr3cNKFCsolPXX8pIb6YECV1ma8dxZWWkTIuZxQHK_N6Nl6DF35FzZqJmUibNL_van5wDfkl8rB-N2Ib6kEsVw75-YJKpA-naH6cccqDkuVtJHmtt8k6-_mpguQ72WPj39Pbwlb4nEnJmW9G8bEw5MItATPGuQSdNyrsevnqXtgCNDo4Zkw6F8Z1m55VRB_UAy8NLUNzoIHTyfqfREiywdlgNALP0csgyOVkiNe_IDe66_vaQscQ"/>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1 mb-1">
+<h3 class="font-headline-sm text-[14px] font-bold text-on-surface truncate">Main Auditorium</h3>
+<!-- Status Badge: Free -->
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-[#EDF4EE] text-[#78977B] font-label-sm text-[11px] font-semibold shrink-0">
+<span class="w-1.5 h-1.5 rounded-full bg-[#78977B]"></span>
+                  Free
+                </span>
+</div>
+<div class="flex items-center text-outline font-body-sm text-[12px] gap-2 mb-1">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">groups</span>
+                  500 capacity
+                </span>
+</div>
+<div class="flex items-center text-outline font-label-sm text-[11px] gap-1">
+<span class="material-symbols-outlined text-[13px]">schedule</span>
+<span>9:00 AM - 12:00 PM</span>
+</div>
+</div>
+</article>
+<!-- Venue Card 2: Seminar Hall A -->
+<article class="bg-surface-container-lowest rounded-xl border border-[#E7DED4] p-3 shadow-sm flex items-center gap-3 hover:border-primary-container/40 transition-all">
+<img alt="Seminar Hall A" class="w-[62px] h-[62px] rounded-lg object-cover shrink-0 bg-surface-container" data-alt="A pristine modern university seminar room featuring sleek modular desks arranged for collaborative lectures, acoustic wooden wall paneling, expansive campus windows letting in natural morning sunlight, and an interactive presentation display." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfe3WTQYKasTwiXf7BysgY1qQoRCo-eC8AOFHBPv0r7AvrBHZEKGv3tiGXcNoJnWGfFVU2JA9GL92rQt5HQtxq0jWoe8mX-eyFwiuzQgRrwuYbzyFN3fy1cgDoAxnTZNw1pjHABT4J0cABfp_WD8Rv2m0lMHS2mMTMy1IRKCfjPCUWC9WnWUEea_hV8QtrHqP8PD0P48TUIVYwnkdt3jlpiwDAoK0ATL56qntlSRi3FLeZOR87FE0yhA"/>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1 mb-1">
+<h3 class="font-headline-sm text-[14px] font-bold text-on-surface truncate">Seminar Hall A</h3>
+<!-- Status Badge: CSE (Occupied) -->
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-[#FDF1F1] text-[#D66F6F] font-label-sm text-[11px] font-semibold shrink-0">
+<span class="w-1.5 h-1.5 rounded-full bg-[#D66F6F]"></span>
+                  CSE
+                </span>
+</div>
+<div class="flex items-center text-outline font-body-sm text-[12px] gap-2 mb-1">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">groups</span>
+                  150 capacity
+                </span>
+</div>
+<div class="flex items-center text-outline font-label-sm text-[11px] gap-1">
+<span class="material-symbols-outlined text-[13px]">schedule</span>
+<span>12:00 PM - 2:00 PM</span>
+</div>
+</div>
+</article>
+<!-- Venue Card 3: Seminar Hall B -->
+<article class="bg-surface-container-lowest rounded-xl border border-[#E7DED4] p-3 shadow-sm flex items-center gap-3 hover:border-primary-container/40 transition-all">
+<img alt="Seminar Hall B" class="w-[62px] h-[62px] rounded-lg object-cover shrink-0 bg-surface-container" data-alt="An inviting medium-sized campus seminar hall with neat rows of upholstered chairs, overhead warm downlighting, high ceilings, whiteboard fixtures, and a bright contemporary aesthetic framed by collegiate campus architecture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0dMpEPHrj_9_dVImAlQo1B3IFlXcs-wQxaGxGcAiaAI97n1K32ybpL_BCeOq3GFi1CWh8hGWHby3MzHSK-_zoivtExpINzvDaVD71vTXigh7DVYO6MA-yGW-smFii70faWQVqyzXFmRkPEW6vSinQP_Laat3gb89A9Ojwji8GXGDhSny8W4sARfVJ4mdT0LbhI7l1crMR4VEKiGK6jz8ywuvCtg3ff0MPAUOkVjolx4jpZoZ6P3Yo2g"/>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1 mb-1">
+<h3 class="font-headline-sm text-[14px] font-bold text-on-surface truncate">Seminar Hall B</h3>
+<!-- Status Badge: Free -->
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-[#EDF4EE] text-[#78977B] font-label-sm text-[11px] font-semibold shrink-0">
+<span class="w-1.5 h-1.5 rounded-full bg-[#78977B]"></span>
+                  Free
+                </span>
+</div>
+<div class="flex items-center text-outline font-body-sm text-[12px] gap-2 mb-1">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">groups</span>
+                  100 capacity
+                </span>
+</div>
+<div class="flex items-center text-outline font-label-sm text-[11px] gap-1">
+<span class="material-symbols-outlined text-[13px]">schedule</span>
+<span>2:00 PM - 4:00 PM</span>
+</div>
+</div>
+</article>
+<!-- Venue Card 4: Gallery 1 -->
+<article class="bg-surface-container-lowest rounded-xl border border-[#E7DED4] p-3 shadow-sm flex items-center gap-3 hover:border-primary-container/40 transition-all">
+<img alt="Gallery 1" class="w-[62px] h-[62px] rounded-lg object-cover shrink-0 bg-surface-container" data-alt="An expansive campus art gallery and exhibition hall with track spotlights illuminating student art showcases, warm wooden hardwood floors, high industrial loft ceilings, and museum-grade presentation stands in gentle afternoon sun." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4qHnF1SRCX88MBaCADWb9-DCnRAMIQ6Tcfmp8WFq9y1eI9efCHWB_RI30SNTUvzLTKebERN-KLmMMrrjra0gyZCy8yokaKZq6V6kKwYnvMbEqNtIMGJy5tYeLlzj56K7P8yCKGyr9jm2L9PQc-ZgibIohvm94pz-sVV3VhWMGxw4QQH-rabrsX9libyhKzZSa9knbWSuwHEQQ0oOWArBNdQ3YifKm1Ieoj_iMZglVLGZVbIRQK4GRIw"/>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1 mb-1">
+<h3 class="font-headline-sm text-[14px] font-bold text-on-surface truncate">Gallery 1</h3>
+<!-- Status Badge: Reserved -->
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-[#FEF3C7] text-[#D97706] font-label-sm text-[11px] font-semibold shrink-0">
+<span class="w-1.5 h-1.5 rounded-full bg-[#D97706]"></span>
+                  Reserved
+                </span>
+</div>
+<div class="flex items-center text-outline font-body-sm text-[12px] gap-2 mb-1">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">groups</span>
+                  200 capacity
+                </span>
+</div>
+<div class="flex items-center text-outline font-label-sm text-[11px] gap-1">
+<span class="material-symbols-outlined text-[13px]">schedule</span>
+<span>10:00 AM - 1:00 PM</span>
+</div>
+</div>
+</article>
+</div>
+</section>
+</div>
+<!-- Shared BottomNavBar Component -->
+<!-- Destination 0: Home (ACTIVE matching current screen intent) -->
+<nav class="fixed bottom-0 left-0 right-0 w-full z-50 flex justify-around items-center px-3 py-2 bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-outline-variant max-w-md mx-auto shadow-[0_-4px_20px_0_rgba(41,37,36,0.05)]">
+<!-- Tab 1: Home (Active) -->
+<button class="flex flex-col items-center justify-center text-primary dark:text-primary font-semibold gap-1 py-1 active:scale-95 transition-transform duration-150" type="button">
+<span class="material-symbols-outlined text-[22px]">home</span>
+<span class="font-label-sm text-label-sm font-medium">Home</span>
+</button>
+<!-- Tab 2: Venues (Inactive) -->
+<button class="flex flex-col items-center justify-center text-outline dark:text-outline gap-1 py-1 hover:text-primary transition-colors active:scale-95 duration-150" type="button">
+<span class="material-symbols-outlined text-[22px]">apartment</span>
+<span class="font-label-sm text-label-sm font-medium">Venues</span>
+</button>
+<!-- Tab 3: Bookings (Inactive) -->
+<button class="flex flex-col items-center justify-center text-outline dark:text-outline gap-1 py-1 hover:text-primary transition-colors active:scale-95 duration-150" type="button">
+<span class="material-symbols-outlined text-[22px]">event_available</span>
+<span class="font-label-sm text-label-sm font-medium">Bookings</span>
+</button>
+<!-- Tab 4: Calendar (Inactive) -->
+<button class="flex flex-col items-center justify-center text-outline dark:text-outline gap-1 py-1 hover:text-primary transition-colors active:scale-95 duration-150" type="button">
+<span class="material-symbols-outlined text-[22px]">calendar_month</span>
+<span class="font-label-sm text-label-sm font-medium">Calendar</span>
+</button>
+<!-- Tab 5: More (Inactive) -->
+<button class="flex flex-col items-center justify-center text-outline dark:text-outline gap-1 py-1 hover:text-primary transition-colors active:scale-95 duration-150" type="button">
+<span class="material-symbols-outlined text-[22px]">menu</span>
+<span class="font-label-sm text-label-sm font-medium">More</span>
+</button>
+</nav>
+</main>
+</body></html>

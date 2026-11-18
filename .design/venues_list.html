@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Venuity - Venues</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container-high": "#efe6e4",
+            "tertiary-fixed-dim": "#aecfb0",
+            "on-tertiary": "#ffffff",
+            "outline": "#8e7168",
+            "secondary-container": "#fea619",
+            "on-secondary-container": "#684000",
+            "inverse-primary": "#ffb59e",
+            "surface-tint": "#ad3300",
+            "on-primary-fixed": "#3a0b00",
+            "inverse-on-surface": "#f8efed",
+            "on-tertiary-fixed": "#04210d",
+            "surface-bright": "#fff8f6",
+            "outline-variant": "#e2bfb5",
+            "background": "#fff8f6",
+            "surface-variant": "#e9e1df",
+            "tertiary-container": "#81a084",
+            "surface-dim": "#e1d8d6",
+            "on-secondary": "#ffffff",
+            "secondary-fixed-dim": "#ffb95f",
+            "on-primary": "#ffffff",
+            "surface": "#fff8f6",
+            "on-tertiary-fixed-variant": "#314d36",
+            "error-container": "#ffdad6",
+            "primary": "#ad3300",
+            "on-tertiary-container": "#1a3621",
+            "inverse-surface": "#342f2e",
+            "surface-container-low": "#fbf2f0",
+            "primary-container": "#ff6835",
+            "on-background": "#1e1b1a",
+            "surface-container": "#f5ecea",
+            "surface-container-highest": "#e9e1df",
+            "on-error": "#ffffff",
+            "primary-fixed": "#ffdbd0",
+            "surface-container-lowest": "#ffffff",
+            "secondary-fixed": "#ffddb8",
+            "on-secondary-fixed": "#2a1700",
+            "error": "#ba1a1a",
+            "on-surface": "#1e1b1a",
+            "secondary": "#855300",
+            "on-primary-container": "#5e1700",
+            "primary-fixed-dim": "#ffb59e",
+            "tertiary": "#48654c",
+            "tertiary-fixed": "#caebcb",
+            "on-error-container": "#93000a",
+            "on-primary-fixed-variant": "#842500",
+            "on-secondary-fixed-variant": "#653e00",
+            "on-surface-variant": "#5a413a"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-sm": "0.5rem",
+            "space-lg": "1rem",
+            "margin": "1.25rem",
+            "space-xs": "0.25rem",
+            "space-md": "0.75rem",
+            "space-xl": "1.5rem",
+            "gutter": "0.75rem"
+          },
+          "fontFamily": {
+            "body-md": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "headline-xl": ["Plus Jakarta Sans"],
+            "label-lg": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "fontWeight": "500" }],
+            "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "600" }],
+            "headline-lg": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+            "headline-xl": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "600" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    /* Hide scrollbar for category filter bar */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body-md text-body-md antialiased min-h-full flex justify-center selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- Mobile Viewport Container (390px base width, warm cream card framing) -->
+<div class="relative w-full max-w-[420px] min-h-screen bg-surface flex flex-col shadow-2xl overflow-x-hidden pb-24">
+<!-- Mobile System Status Bar (9:41) -->
+<div class="w-full pt-3 px-6 pb-2 flex justify-between items-center text-on-surface text-xs font-semibold select-none z-20">
+<span class="tracking-tight font-headline-sm text-[14px]">9:41</span>
+<div class="flex items-center space-x-1.5">
+<span class="material-symbols-outlined text-[15px] leading-none" data-icon="signal_cellular_alt">signal_cellular_alt</span>
+<span class="material-symbols-outlined text-[15px] leading-none" data-icon="wifi">wifi</span>
+<span class="material-symbols-outlined text-[18px] leading-none rotate-90" data-icon="battery_full">battery_full</span>
+</div>
+</div>
+<!-- Screen Header (Venues Title + Search & Filter Trailing Icons) -->
+<header class="px-5 pt-2 pb-3 flex justify-between items-center z-10">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Venues</h1>
+</div>
+<div class="flex items-center space-x-2">
+<button aria-label="Search" class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface hover:bg-surface-container-high active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[24px]" data-icon="search">search</span>
+</button>
+</div>
+</header>
+<!-- Search Input & Filter Button Row -->
+<section class="px-5 pb-3">
+<div class="flex items-center gap-2.5">
+<div class="relative flex-1 flex items-center">
+<span class="absolute left-3.5 text-outline material-symbols-outlined text-[20px] pointer-events-none" data-icon="search">search</span>
+<input class="w-full h-12 pl-10 pr-4 bg-surface-container-lowest border border-outline-variant/60 rounded-xl text-on-surface placeholder:text-outline font-body-md text-body-md focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-all shadow-[0_2px_8px_rgba(41,37,36,0.03)]" placeholder="Search venues..." type="text"/>
+</div>
+<button aria-label="Filter" class="h-12 w-12 flex-shrink-0 bg-surface-container-lowest border border-outline-variant/60 rounded-xl flex items-center justify-center text-on-surface hover:bg-surface-container-high active:scale-95 transition-all shadow-[0_2px_8px_rgba(41,37,36,0.03)]" type="button">
+<span class="material-symbols-outlined text-[22px] text-on-surface-variant" data-icon="tune">tune</span>
+</button>
+</div>
+</section>
+<!-- Horizontal Category Filter Chips -->
+<section class="pb-4">
+<div class="flex items-center gap-2 overflow-x-auto no-scrollbar px-5 py-0.5">
+<!-- Active Filter: All -->
+<button class="flex-shrink-0 px-4 py-2 rounded-full bg-primary-container text-on-primary font-label-md text-label-md font-semibold shadow-sm active:scale-95 transition-transform" type="button">
+          All
+        </button>
+<!-- Inactive Filter: Auditorium -->
+<button class="flex-shrink-0 px-4 py-2 rounded-full bg-surface-container-lowest border border-outline-variant/70 text-on-surface font-label-md text-label-md hover:bg-surface-container-high active:scale-95 transition-all" type="button">
+          Auditorium
+        </button>
+<!-- Inactive Filter: Seminar Hall -->
+<button class="flex-shrink-0 px-4 py-2 rounded-full bg-surface-container-lowest border border-outline-variant/70 text-on-surface font-label-md text-label-md hover:bg-surface-container-high active:scale-95 transition-all" type="button">
+          Seminar Hall
+        </button>
+<!-- Inactive Filter: Gallery -->
+<button class="flex-shrink-0 px-4 py-2 rounded-full bg-surface-container-lowest border border-outline-variant/70 text-on-surface font-label-md text-label-md hover:bg-surface-container-high active:scale-95 transition-all" type="button">
+          Gallery
+        </button>
+<!-- Inactive Filter: Conference Room -->
+<button class="flex-shrink-0 px-4 py-2 rounded-full bg-surface-container-lowest border border-outline-variant/70 text-on-surface font-label-md text-label-md hover:bg-surface-container-high active:scale-95 transition-all" type="button">
+          Conference Room
+        </button>
+</div>
+</section>
+<!-- Venue Card List -->
+<main class="flex-1 px-5 space-y-3.5">
+<!-- 1. Main Auditorium -->
+<article class="bg-surface-container-lowest rounded-2xl border border-outline-variant/60 p-3 flex gap-3.5 items-center shadow-[0_4px_16px_-2px_rgba(41,37,36,0.04),0_2px_6px_-1px_rgba(255,104,53,0.03)] hover:border-primary-container/40 transition-all cursor-pointer group active:scale-[0.99]">
+<!-- Thumbnail -->
+<div class="relative w-24 h-24 rounded-xl overflow-hidden flex-shrink-0 bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="A grand university auditorium interior featuring tiered amphitheater seating upholstered in deep terracotta fabric facing a sleek wooden lecture stage. Warm golden spotlights and modern acoustic timber wall panels wash the spacious hall in bright ambient collegiate light. Captured with crisp architectural photography aesthetics." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAL_es7kIFQ5aSA5_c-Gt15SetdAfJE-Ko-cTigsQ3NvmYV5Z-5lFZS_n-a_MPqtXn_ftjFGIDBejEbGcxReDXFWazJwml7fgMq4pP2J9_Uf4zJ28bFEKW1EHnBgBJiyHiXxH4VqDL4YYu7cyoqy-hdemQXJM5YUWu5Rv7ucSprdhp5lUIaQl-UaIALl4yoFSSh7tXMHy43-yhwBFUomPcrzEtfvAD-_j2ceN83COAHqDdGH5E1AHJ2w"/>
+</div>
+<!-- Card Content -->
+<div class="flex-1 min-w-0 flex flex-col justify-between py-0.5">
+<div class="flex items-start justify-between gap-1">
+<h2 class="font-headline-sm text-headline-sm text-on-surface truncate group-hover:text-primary transition-colors">Main Auditorium</h2>
+<!-- Available Badge -->
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-tertiary-fixed/40 text-on-tertiary-container font-label-sm text-label-sm flex-shrink-0">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+              Available
+            </span>
+</div>
+<!-- Capacity -->
+<div class="flex items-center gap-1.5 text-outline font-body-sm text-body-sm mt-1">
+<span class="material-symbols-outlined text-[16px] text-outline" data-icon="groups">groups</span>
+<span>500 capacity</span>
+</div>
+<!-- Facilities Row -->
+<div class="flex items-center gap-3 text-outline text-[12px] font-label-md mt-2 pt-1 border-t border-surface-container-high/60">
+<div class="flex items-center gap-1" title="Projector">
+<span class="material-symbols-outlined text-[15px]" data-icon="videocam">videocam</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Projector</span>
+</div>
+<div class="flex items-center gap-1" title="AC">
+<span class="material-symbols-outlined text-[15px]" data-icon="mode_fan">mode_fan</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">AC</span>
+</div>
+<div class="flex items-center gap-1" title="Wi-Fi">
+<span class="material-symbols-outlined text-[15px]" data-icon="wifi">wifi</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Wi-Fi</span>
+</div>
+</div>
+</div>
+</article>
+<!-- 2. Seminar Hall A -->
+<article class="bg-surface-container-lowest rounded-2xl border border-outline-variant/60 p-3 flex gap-3.5 items-center shadow-[0_4px_16px_-2px_rgba(41,37,36,0.04),0_2px_6px_-1px_rgba(255,104,53,0.03)] hover:border-primary-container/40 transition-all cursor-pointer group active:scale-[0.99]">
+<!-- Thumbnail -->
+<div class="relative w-24 h-24 rounded-xl overflow-hidden flex-shrink-0 bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="A sunlit academic lecture hall with tiered blonde wood desks and ergonomic chairs arranged neatly in curved rows. The room features a digital smart lectern at the front and large frosted windows bathing the classroom in soft daytime illumination. The warm collegiate atmosphere showcases modern campus architecture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDwJw8M5uH2Y-iM-k12_VVZj8hRLS0FKDnJ5BHFIy8u2DphUx5M1xShU1wTnBUi_WGkpILtnf9Q5d538DCu5O6wsgk5yVTFdQFRLyaUfUYi2X5RFbzowRN521OirA9GzexDD_jzvgJXlp-TN4Kn5-kszRShfiuuuADIynEE8fUGuArcrvnmvpPzTjNx3KZSPYlH0ou2WwmUkW5c1LW6UJiCQOt_f8gQJm6pGQusfYGE9DKAxm-2vLjdA"/>
+</div>
+<!-- Card Content -->
+<div class="flex-1 min-w-0 flex flex-col justify-between py-0.5">
+<div class="flex items-start justify-between gap-1">
+<h2 class="font-headline-sm text-headline-sm text-on-surface truncate group-hover:text-primary transition-colors">Seminar Hall A</h2>
+<!-- Occupied Badge -->
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm flex-shrink-0">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+              Occupied
+            </span>
+</div>
+<!-- Capacity -->
+<div class="flex items-center gap-1.5 text-outline font-body-sm text-body-sm mt-1">
+<span class="material-symbols-outlined text-[16px] text-outline" data-icon="groups">groups</span>
+<span>150 capacity</span>
+</div>
+<!-- Facilities Row -->
+<div class="flex items-center gap-3 text-outline text-[12px] font-label-md mt-2 pt-1 border-t border-surface-container-high/60">
+<div class="flex items-center gap-1" title="Projector">
+<span class="material-symbols-outlined text-[15px]" data-icon="videocam">videocam</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Projector</span>
+</div>
+<div class="flex items-center gap-1" title="Microphone">
+<span class="material-symbols-outlined text-[15px]" data-icon="mic">mic</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Microphone</span>
+</div>
+<div class="flex items-center gap-1" title="AC">
+<span class="material-symbols-outlined text-[15px]" data-icon="mode_fan">mode_fan</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">AC</span>
+</div>
+</div>
+</div>
+</article>
+<!-- 3. Seminar Hall B -->
+<article class="bg-surface-container-lowest rounded-2xl border border-outline-variant/60 p-3 flex gap-3.5 items-center shadow-[0_4px_16px_-2px_rgba(41,37,36,0.04),0_2px_6px_-1px_rgba(255,104,53,0.03)] hover:border-primary-container/40 transition-all cursor-pointer group active:scale-[0.99]">
+<!-- Thumbnail -->
+<div class="relative w-24 h-24 rounded-xl overflow-hidden flex-shrink-0 bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="A modern collegiate collaborative classroom featuring modular honey-oak tables and orange accent task chairs. Clean recessed lighting overhead complements a bright white presentation whiteboard and ceiling-mounted digital projectors. A welcoming, organized higher education environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgH94m_tmBGTb1vXF-cyOcvnIqu7pezPKPFsMVjI-zRxdMhnBg-u7uiMFYwRTi6WmKq3Ccs4u3EiKkGjkoG_aDUMXI4k-bqgfloe6x30Fe_6tRYNoppg37FUzDEWWKLdJvid3YJuiai11oratjLHHVCxW4wk1tCSC1FBqncKo8ImEXnhAe_4hP4DdPN6MbS0o-VIbAmICuoO414hmhcx7ZCknhP8CjKbQwRSmWb2-BPe-j0N-31iNj_w"/>
+</div>
+<!-- Card Content -->
+<div class="flex-1 min-w-0 flex flex-col justify-between py-0.5">
+<div class="flex items-start justify-between gap-1">
+<h2 class="font-headline-sm text-headline-sm text-on-surface truncate group-hover:text-primary transition-colors">Seminar Hall B</h2>
+<!-- Available Badge -->
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-tertiary-fixed/40 text-on-tertiary-container font-label-sm text-label-sm flex-shrink-0">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+              Available
+            </span>
+</div>
+<!-- Capacity -->
+<div class="flex items-center gap-1.5 text-outline font-body-sm text-body-sm mt-1">
+<span class="material-symbols-outlined text-[16px] text-outline" data-icon="groups">groups</span>
+<span>100 capacity</span>
+</div>
+<!-- Facilities Row -->
+<div class="flex items-center gap-3 text-outline text-[12px] font-label-md mt-2 pt-1 border-t border-surface-container-high/60">
+<div class="flex items-center gap-1" title="Projector">
+<span class="material-symbols-outlined text-[15px]" data-icon="videocam">videocam</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Projector</span>
+</div>
+<div class="flex items-center gap-1" title="Wi-Fi">
+<span class="material-symbols-outlined text-[15px]" data-icon="wifi">wifi</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Wi-Fi</span>
+</div>
+<div class="flex items-center gap-1" title="AC">
+<span class="material-symbols-outlined text-[15px]" data-icon="mode_fan">mode_fan</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">AC</span>
+</div>
+</div>
+</div>
+</article>
+<!-- 4. Gallery 1 -->
+<article class="bg-surface-container-lowest rounded-2xl border border-outline-variant/60 p-3 flex gap-3.5 items-center shadow-[0_4px_16px_-2px_rgba(41,37,36,0.04),0_2px_6px_-1px_rgba(255,104,53,0.03)] hover:border-primary-container/40 transition-all cursor-pointer group active:scale-[0.99]">
+<!-- Thumbnail -->
+<div class="relative w-24 h-24 rounded-xl overflow-hidden flex-shrink-0 bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="A spacious multi-purpose campus exhibition gallery with polished light concrete floors and directional track spotlights showcasing framed student artworks on pristine warm-white gallery partitions. High ceilings and airy architectural lines deliver an open, refined event setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAq93qi91xFFnJzLpWgjPKD2g3hHF2GpyEJaVVWQ421bxG7vgNWqVsR40BGzaZVR_0o4g1Bqxn708-IfA3z_od3hSNUuySeb-7HMhtaqivqPkU9kY1pAThWIkp0-WG_U2MB8cs19A8HpqXOMwAVxwYZvXLfni_KY0k1gh2uaKIjfgtebMdIK1qX9k3GgrWnG2IwJK3WS9wbrIUqNID4YwO5ySk1V07IpftGvAyMiC-WG-Qi7Asqjr8xsQ"/>
+</div>
+<!-- Card Content -->
+<div class="flex-1 min-w-0 flex flex-col justify-between py-0.5">
+<div class="flex items-start justify-between gap-1">
+<h2 class="font-headline-sm text-headline-sm text-on-surface truncate group-hover:text-primary transition-colors">Gallery 1</h2>
+<!-- Reserved Badge -->
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm flex-shrink-0">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+              Reserved
+            </span>
+</div>
+<!-- Capacity -->
+<div class="flex items-center gap-1.5 text-outline font-body-sm text-body-sm mt-1">
+<span class="material-symbols-outlined text-[16px] text-outline" data-icon="groups">groups</span>
+<span>200 capacity</span>
+</div>
+<!-- Facilities Row -->
+<div class="flex items-center gap-3 text-outline text-[12px] font-label-md mt-2 pt-1 border-t border-surface-container-high/60">
+<div class="flex items-center gap-1" title="Projector">
+<span class="material-symbols-outlined text-[15px]" data-icon="videocam">videocam</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Projector</span>
+</div>
+<div class="flex items-center gap-1" title="Wi-Fi">
+<span class="material-symbols-outlined text-[15px]" data-icon="wifi">wifi</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Wi-Fi</span>
+</div>
+<div class="flex items-center gap-1" title="AC">
+<span class="material-symbols-outlined text-[15px]" data-icon="mode_fan">mode_fan</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">AC</span>
+</div>
+</div>
+</div>
+</article>
+<!-- 5. Gallery 2 -->
+<article class="bg-surface-container-lowest rounded-2xl border border-outline-variant/60 p-3 flex gap-3.5 items-center shadow-[0_4px_16px_-2px_rgba(41,37,36,0.04),0_2px_6px_-1px_rgba(255,104,53,0.03)] hover:border-primary-container/40 transition-all cursor-pointer group active:scale-[0.99]">
+<!-- Thumbnail -->
+<div class="relative w-24 h-24 rounded-xl overflow-hidden flex-shrink-0 bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="An intimate contemporary campus art gallery and multipurpose reception atrium with warm wood accents, glass display showcases, and soft diffused lighting reflecting off terrazzo floors. A clean, sophisticated light-filled interior designed for academic gatherings and symposiums." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBldDKWXNoZDYg39N6uAsxsSuZIQuJJruXeBslHsal2kgJSW3gEb1k5ziuYgcOW_sA9eUT4DH1kqBxsib0k83cb4qYkb66oX3MFw_olp6_qQpLDzkcliokMz3sJhb5WjmZQQ7JVwTMpOC_XnEYzeEmEvEmj32Eqjvj3BlhgOCznF7D3nWSkTfZpV3l1un4sV3saOn6ZjrK_IT9wSqa2qrXav9kIkCvX2EITeERL04V_R1ME0guonBCDEA"/>
+</div>
+<!-- Card Content -->
+<div class="flex-1 min-w-0 flex flex-col justify-between py-0.5">
+<div class="flex items-start justify-between gap-1">
+<h2 class="font-headline-sm text-headline-sm text-on-surface truncate group-hover:text-primary transition-colors">Gallery 2</h2>
+<!-- Available Badge -->
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-tertiary-fixed/40 text-on-tertiary-container font-label-sm text-label-sm flex-shrink-0">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+              Available
+            </span>
+</div>
+<!-- Capacity -->
+<div class="flex items-center gap-1.5 text-outline font-body-sm text-body-sm mt-1">
+<span class="material-symbols-outlined text-[16px] text-outline" data-icon="groups">groups</span>
+<span>120 capacity</span>
+</div>
+<!-- Facilities Row -->
+<div class="flex items-center gap-3 text-outline text-[12px] font-label-md mt-2 pt-1 border-t border-surface-container-high/60">
+<div class="flex items-center gap-1" title="Projector">
+<span class="material-symbols-outlined text-[15px]" data-icon="videocam">videocam</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Projector</span>
+</div>
+<div class="flex items-center gap-1" title="Microphone">
+<span class="material-symbols-outlined text-[15px]" data-icon="mic">mic</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Microphone</span>
+</div>
+<div class="flex items-center gap-1" title="AC">
+<span class="material-symbols-outlined text-[15px]" data-icon="mode_fan">mode_fan</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">AC</span>
+</div>
+</div>
+</div>
+</article>
+</main>
+<!-- Bottom Navigation Bar (Shared Component: BottomNavBar, Active: Venues) -->
+<nav class="fixed bottom-0 left-0 right-0 w-full z-50 flex justify-around items-center px-3 py-2 bg-surface-container-lowest border-t border-outline-variant max-w-[420px] mx-auto shadow-[0_-4px_20px_0_rgba(41,37,36,0.05)]">
+<!-- Slot 1: Home -->
+<a class="flex flex-col items-center justify-center text-outline gap-1 py-1 hover:text-primary transition-colors active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined text-[22px]" data-icon="home">home</span>
+<span class="font-label-sm text-label-sm font-medium">Home</span>
+</a>
+<!-- Slot 2: Venues (ACTIVE) -->
+<a class="flex flex-col items-center justify-center text-primary font-semibold gap-1 py-1 active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined text-[22px]" data-icon="apartment" style="font-variation-settings: 'FILL' 1;">apartment</span>
+<span class="font-label-sm text-label-sm font-medium">Venues</span>
+</a>
+<!-- Slot 3: Bookings -->
+<a class="flex flex-col items-center justify-center text-outline gap-1 py-1 hover:text-primary transition-colors active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined text-[22px]" data-icon="event_available">event_available</span>
+<span class="font-label-sm text-label-sm font-medium">Bookings</span>
+</a>
+<!-- Slot 4: Calendar -->
+<a class="flex flex-col items-center justify-center text-outline gap-1 py-1 hover:text-primary transition-colors active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined text-[22px]" data-icon="calendar_month">calendar_month</span>
+<span class="font-label-sm text-label-sm font-medium">Calendar</span>
+</a>
+<!-- Slot 5: More -->
+<a class="flex flex-col items-center justify-center text-outline gap-1 py-1 hover:text-primary transition-colors active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined text-[22px]" data-icon="menu">menu</span>
+<span class="font-label-sm text-label-sm font-medium">More</span>
+</a>
+</nav>
+</div>
+</body></html>

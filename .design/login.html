@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Venuity - Sign In</title>
+<!-- Google Fonts: Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container-high": "#efe6e4",
+            "tertiary-fixed-dim": "#aecfb0",
+            "on-tertiary": "#ffffff",
+            "outline": "#8e7168",
+            "secondary-container": "#fea619",
+            "on-secondary-container": "#684000",
+            "inverse-primary": "#ffb59e",
+            "surface-tint": "#ad3300",
+            "on-primary-fixed": "#3a0b00",
+            "inverse-on-surface": "#f8efed",
+            "on-tertiary-fixed": "#04210d",
+            "surface-bright": "#fff8f6",
+            "outline-variant": "#e2bfb5",
+            "background": "#fff8f6",
+            "surface-variant": "#e9e1df",
+            "tertiary-container": "#81a084",
+            "surface-dim": "#e1d8d6",
+            "on-secondary": "#ffffff",
+            "secondary-fixed-dim": "#ffb95f",
+            "on-primary": "#ffffff",
+            "surface": "#fff8f6",
+            "on-tertiary-fixed-variant": "#314d36",
+            "error-container": "#ffdad6",
+            "primary": "#ad3300",
+            "on-tertiary-container": "#1a3621",
+            "inverse-surface": "#342f2e",
+            "surface-container-low": "#fbf2f0",
+            "primary-container": "#ff6835",
+            "on-background": "#1e1b1a",
+            "surface-container": "#f5ecea",
+            "surface-container-highest": "#e9e1df",
+            "on-error": "#ffffff",
+            "primary-fixed": "#ffdbd0",
+            "surface-container-lowest": "#ffffff",
+            "secondary-fixed": "#ffddb8",
+            "on-secondary-fixed": "#2a1700",
+            "error": "#ba1a1a",
+            "on-surface": "#1e1b1a",
+            "secondary": "#855300",
+            "on-primary-container": "#5e1700",
+            "primary-fixed-dim": "#ffb59e",
+            "tertiary": "#48654c",
+            "tertiary-fixed": "#caebcb",
+            "on-error-container": "#93000a",
+            "on-primary-fixed-variant": "#842500",
+            "on-secondary-fixed-variant": "#653e00",
+            "on-surface-variant": "#5a413a"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-sm": "0.5rem",
+            "space-lg": "1rem",
+            "margin": "1.25rem",
+            "space-xs": "0.25rem",
+            "space-md": "0.75rem",
+            "space-xl": "1.5rem",
+            "gutter": "0.75rem"
+          },
+          "fontFamily": {
+            "body-md": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "headline-xl": ["Plus Jakarta Sans"],
+            "label-lg": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "fontWeight": "500" }],
+            "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "600" }],
+            "headline-lg": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+            "headline-xl": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "600" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-family: 'Material Symbols Outlined';
+      font-weight: normal;
+      font-style: normal;
+      font-size: 20px;
+      line-height: 1;
+      letter-spacing: normal;
+      text-transform: none;
+      display: inline-block;
+      white-space: nowrap;
+      word-wrap: normal;
+      direction: ltr;
+      -webkit-font-feature-settings: 'liga';
+      -webkit-font-smoothing: antialiased;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-[#FFF7ED] text-on-surface antialiased min-h-screen flex items-center justify-center py-0 md:py-8 font-body-md text-body-md select-none">
+<!-- Mobile Viewport Container (390 x 844 target ratio) -->
+<main class="w-full max-w-[390px] h-[844px] bg-surface flex flex-col relative overflow-hidden shadow-2xl rounded-[40px] border border-outline-variant/30">
+<!-- Top Status Bar Area -->
+<div class="absolute top-0 left-0 right-0 z-30 px-6 pt-3 pb-1 flex justify-between items-center text-white pointer-events-none drop-shadow-md">
+<span class="font-label-lg text-label-lg tracking-tight font-semibold">9:41</span>
+<div class="flex items-center space-x-1.5">
+<span class="material-symbols-outlined text-[17px]">signal_cellular_4_bar</span>
+<span class="material-symbols-outlined text-[17px]">wifi</span>
+<span class="material-symbols-outlined text-[19px]">battery_full</span>
+</div>
+</div>
+<!-- Upper Section: Architectural Campus Imagery & Venuity Branding -->
+<div class="relative h-[44%] w-full overflow-hidden flex flex-col justify-between p-6 pt-11">
+<!-- Background Campus Image -->
+<img class="absolute inset-0 w-full h-full object-cover object-center scale-105" data-alt="A grand collegiate neoclassical university building with classical stone pillars, brick facades, and large warm arched windows glowing under radiant golden hour sunset light. The campus landscape features manicured green lawns and warm autumn oak trees basked in rich amber and terracotta hues. High architectural photography quality with a serene academic atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGB8qRMB7RlYhwitL4roVecxyU1W4JpyDkmvKfCIvvlKQrj1_kIS9xpmd0wbh_uVM_nAUKyuiTIhOlkqiBkM0PDvdpWEoTgCBwWfTebmN68hIWxATC3IYiGjUkzr24OzWPzwJhaixOvKYC4HjD0eldqkxpBoa1ux4MOkBhrCZtMn-fw3409uUxToc8j30P8bakovgYm9CeaqLIiLR7V0e5Pu8_mzg9d3aO1yctpzHnR2vN8C4A9GA8xg"/>
+<!-- Warm Gradient Scrim Overlay -->
+<div class="absolute inset-0 bg-gradient-to-t from-stone-900/90 via-stone-900/50 to-stone-900/40"></div>
+<div class="absolute inset-0 bg-primary/20 mix-blend-multiply"></div>
+<!-- Campus Floating Badge / Architectural Pill -->
+<div class="relative z-10 self-center">
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/15 backdrop-blur-md border border-white/20 text-white/95 text-label-sm font-label-sm tracking-wider uppercase">
+<span class="material-symbols-outlined text-[14px] text-primary-fixed">school</span>
+<span>Campus Portal</span>
+</div>
+</div>
+<!-- Hero Wordmark & Motto Overlay -->
+<div class="relative z-10 flex flex-col items-center text-center pb-3">
+<!-- Brand Neoclassical Icon & Wordmark -->
+<div class="flex flex-col items-center mb-1">
+<div class="w-12 h-12 rounded-2xl bg-primary-container text-white flex items-center justify-center shadow-lg shadow-primary-container/40 mb-2">
+<span class="material-symbols-outlined text-[28px]" data-weight="fill" style="font-variation-settings: 'FILL' 1;">account_balance</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-white tracking-tight drop-shadow-sm font-bold">
+            Venuity
+          </h1>
+</div>
+<p class="font-label-sm text-label-sm text-primary-fixed tracking-[0.2em] uppercase font-semibold mb-1">
+          PLAN • BOOK • COLLABORATE
+        </p>
+<p class="font-body-sm text-body-sm text-white/80 max-w-[260px] leading-snug">
+          Smart Venue Management for a Connected Campus
+        </p>
+</div>
+</div>
+<!-- Lower Section: Tactile Card Architecture (Sign In Canvas) -->
+<div class="relative z-20 flex-1 bg-surface-container-lowest rounded-t-[32px] -mt-5 px-6 pt-6 pb-6 flex flex-col justify-between shadow-[0_-8px_30px_rgba(41,37,36,0.12)] border-t border-outline-variant/40">
+<div>
+<!-- Greeting Header -->
+<div class="mb-5">
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight mb-1">
+            Welcome back!
+          </h2>
+<p class="font-body-sm text-body-sm text-outline">
+            Sign in to continue to your account
+          </p>
+</div>
+<!-- Form Elements -->
+<form class="space-y-3.5" onsubmit="event.preventDefault();">
+<!-- Email / Username Input -->
+<div class="space-y-1">
+<label class="block font-label-md text-label-md text-on-surface-variant font-medium">
+              Campus Email or ID
+            </label>
+<div class="relative flex items-center">
+<span class="absolute left-3.5 text-outline pointer-events-none material-symbols-outlined">
+                mail
+              </span>
+<input class="w-full h-12 pl-11 pr-4 bg-surface-container-low border border-outline-variant/70 rounded-xl font-body-md text-body-md text-on-surface placeholder:text-outline/70 focus:outline-none focus:ring-2 focus:ring-primary-container/40 focus:border-primary-container transition-all" placeholder="you@college.edu" required="" type="email"/>
+</div>
+</div>
+<!-- Password Input -->
+<div class="space-y-1">
+<label class="block font-label-md text-label-md text-on-surface-variant font-medium">
+              Password
+            </label>
+<div class="relative flex items-center">
+<span class="absolute left-3.5 text-outline pointer-events-none material-symbols-outlined">
+                lock
+              </span>
+<input class="w-full h-12 pl-11 pr-11 bg-surface-container-low border border-outline-variant/70 rounded-xl font-body-md text-body-md text-on-surface placeholder:text-outline/70 focus:outline-none focus:ring-2 focus:ring-primary-container/40 focus:border-primary-container transition-all" id="password-field" placeholder="Enter your password" required="" type="password"/>
+<button aria-label="Toggle password visibility" class="absolute right-3.5 text-outline hover:text-on-surface p-1 transition-colors flex items-center justify-center" id="toggle-pwd-btn" type="button">
+<span class="material-symbols-outlined text-[19px]" id="pwd-icon">visibility</span>
+</button>
+</div>
+</div>
+<!-- Checkbox & Forgot Password Row -->
+<div class="flex items-center justify-between pt-0.5">
+<label class="flex items-center gap-2 cursor-pointer group">
+<input checked="" class="w-4 h-4 rounded text-primary-container focus:ring-primary-container/30 border-outline-variant cursor-pointer accent-[#FF6835]" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface-variant group-hover:text-on-surface transition-colors">
+                Remember me
+              </span>
+</label>
+<a class="font-label-md text-label-md text-primary-container hover:text-primary transition-colors font-semibold" href="#">
+              Forgot password?
+            </a>
+</div>
+<!-- Primary CTA Button -->
+<button class="w-full h-12 bg-primary-container hover:bg-[#C94B24] active:scale-[0.98] text-white font-label-lg text-label-lg rounded-xl shadow-md shadow-primary-container/25 flex items-center justify-center gap-2 transition-all duration-150 mt-1 cursor-pointer" type="submit">
+<span>Sign In</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</form>
+<!-- Divider -->
+<div class="relative my-4 flex items-center justify-center">
+<div class="w-full border-t border-outline-variant/50"></div>
+<span class="absolute bg-surface-container-lowest px-3 font-label-sm text-label-sm text-outline font-normal">
+            Or continue with
+          </span>
+</div>
+<!-- Social Federation Row -->
+<div class="grid grid-cols-2 gap-3">
+<!-- Google Auth -->
+<button class="h-11 px-3 bg-surface-container-low hover:bg-surface-container border border-outline-variant/60 rounded-xl flex items-center justify-center gap-2.5 active:scale-95 transition-all text-on-surface" type="button">
+<!-- Google Color SVG -->
+<svg class="w-4 h-4" viewbox="0 0 24 24">
+<path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"></path>
+<path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"></path>
+<path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" fill="#FBBC05"></path>
+<path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" fill="#EA4335"></path>
+</svg>
+<span class="font-label-md text-label-md font-semibold text-on-surface">Google</span>
+</button>
+<!-- Microsoft Campus SSO -->
+<button class="h-11 px-3 bg-surface-container-low hover:bg-surface-container border border-outline-variant/60 rounded-xl flex items-center justify-center gap-2.5 active:scale-95 transition-all text-on-surface" type="button">
+<!-- Microsoft SVG -->
+<svg class="w-4 h-4" viewbox="0 0 21 21">
+<rect fill="#f25022" height="9" width="9" x="1" y="1"></rect>
+<rect fill="#7fba00" height="9" width="9" x="11" y="1"></rect>
+<rect fill="#00a4ef" height="9" width="9" x="1" y="11"></rect>
+<rect fill="#ffb900" height="9" width="9" x="11" y="11"></rect>
+</svg>
+<span class="font-label-md text-label-md font-semibold text-on-surface">Microsoft</span>
+</button>
+</div>
+</div>
+<!-- Footer Registration Prompt & Home Bar Indicator -->
+<div class="pt-3 flex flex-col items-center">
+<p class="font-body-sm text-body-sm text-outline">
+          Don't have an account? 
+          <a class="font-label-md text-label-md text-primary-container hover:text-primary transition-colors font-semibold ml-1" href="#">
+            Sign up
+          </a>
+</p>
+<!-- iOS Home Indicator Pill -->
+<div class="w-32 h-1 bg-on-surface/20 rounded-full mt-3"></div>
+</div>
+</div>
+</main>
+<!-- Interactive script for Password Toggle -->
+<script>
+    const pwdInput = document.getElementById('password-field');
+    const toggleBtn = document.getElementById('toggle-pwd-btn');
+    const pwdIcon = document.getElementById('pwd-icon');
+
+    if (toggleBtn && pwdInput && pwdIcon) {
+      toggleBtn.addEventListener('click', () => {
+        const isPassword = pwdInput.getAttribute('type') === 'password';
+        pwdInput.setAttribute('type', isPassword ? 'text' : 'password');
+        pwdIcon.textContent = isPassword ? 'visibility_off' : 'visibility';
+      });
+    }
+  </script>
+</body></html>

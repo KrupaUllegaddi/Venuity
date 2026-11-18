@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Book a Venue - Venuity</title>
+<!-- Google Fonts: Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container-high": "#efe6e4",
+            "tertiary-fixed-dim": "#aecfb0",
+            "on-tertiary": "#ffffff",
+            "outline": "#8e7168",
+            "secondary-container": "#fea619",
+            "on-secondary-container": "#684000",
+            "inverse-primary": "#ffb59e",
+            "surface-tint": "#ad3300",
+            "on-primary-fixed": "#3a0b00",
+            "inverse-on-surface": "#f8efed",
+            "on-tertiary-fixed": "#04210d",
+            "surface-bright": "#fff8f6",
+            "outline-variant": "#e2bfb5",
+            "background": "#fff8f6",
+            "surface-variant": "#e9e1df",
+            "tertiary-container": "#81a084",
+            "surface-dim": "#e1d8d6",
+            "on-secondary": "#ffffff",
+            "secondary-fixed-dim": "#ffb95f",
+            "on-primary": "#ffffff",
+            "surface": "#fff8f6",
+            "on-tertiary-fixed-variant": "#314d36",
+            "error-container": "#ffdad6",
+            "primary": "#ad3300",
+            "on-tertiary-container": "#1a3621",
+            "inverse-surface": "#342f2e",
+            "surface-container-low": "#fbf2f0",
+            "primary-container": "#ff6835",
+            "on-background": "#1e1b1a",
+            "surface-container": "#f5ecea",
+            "surface-container-highest": "#e9e1df",
+            "on-error": "#ffffff",
+            "primary-fixed": "#ffdbd0",
+            "surface-container-lowest": "#ffffff",
+            "secondary-fixed": "#ffddb8",
+            "on-secondary-fixed": "#2a1700",
+            "error": "#ba1a1a",
+            "on-surface": "#1e1b1a",
+            "secondary": "#855300",
+            "on-primary-container": "#5e1700",
+            "primary-fixed-dim": "#ffb59e",
+            "tertiary": "#48654c",
+            "tertiary-fixed": "#caebcb",
+            "on-error-container": "#93000a",
+            "on-primary-fixed-variant": "#842500",
+            "on-secondary-fixed-variant": "#653e00",
+            "on-surface-variant": "#5a413a"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "2xl": "1rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-sm": "0.5rem",
+            "space-lg": "1rem",
+            "margin": "1.25rem",
+            "space-xs": "0.25rem",
+            "space-md": "0.75rem",
+            "space-xl": "1.5rem",
+            "gutter": "0.75rem"
+          },
+          "fontFamily": {
+            "body-md": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "headline-xl": ["Plus Jakarta Sans"],
+            "label-lg": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "fontWeight": "500" }],
+            "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "600" }],
+            "headline-lg": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+            "headline-xl": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .custom-scroll::-webkit-scrollbar {
+      display: none;
+    }
+    .custom-scroll {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-[#FFF7ED] min-h-screen text-on-surface antialiased flex justify-center selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- Main Mobile App Shell (390 x 844 context) -->
+<main class="w-full max-w-[390px] min-h-screen bg-[#FFF7ED] shadow-[0_4px_24px_-4px_rgba(41,37,36,0.08)] flex flex-col relative pb-6">
+<!-- Mobile Status Bar (9:41) -->
+<header class="w-full pt-3 px-6 pb-2 flex justify-between items-center text-on-surface select-none">
+<span class="font-headline-sm text-body-md font-semibold tracking-tight text-on-surface">9:41</span>
+<div class="flex items-center gap-1.5 text-on-surface">
+<span class="material-symbols-outlined text-[16px]">signal_cellular_alt</span>
+<span class="material-symbols-outlined text-[16px]">wifi</span>
+<span class="material-symbols-outlined text-[18px]">battery_full</span>
+</div>
+</header>
+<!-- Top App Navigation / Header: Task focused with Back action -->
+<nav class="w-full px-5 py-2 flex items-center gap-3">
+<button aria-label="Go back" class="w-10 h-10 rounded-full flex items-center justify-center bg-surface-container-lowest hover:bg-surface-container-high transition-colors active:scale-95 duration-150 shadow-[0_2px_8px_-2px_rgba(41,37,36,0.06)] border border-[#E7DED4] text-on-surface" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="arrow_back">arrow_back</span>
+</button>
+<div class="flex flex-col">
+<h1 class="font-headline-md text-headline-md font-bold text-on-surface leading-tight">Book a Venue</h1>
+<p class="font-label-sm text-label-sm text-outline tracking-normal">Campus Reservation System</p>
+</div>
+</nav>
+<!-- Content Canvas Container -->
+<div class="px-5 pt-3 pb-8 flex-1 flex flex-col gap-4">
+<!-- Department Priority Notice Card -->
+<section aria-label="Notice" class="bg-[#FFF0E8] border border-[#F59E0B]/30 rounded-xl p-3.5 flex gap-3 items-start shadow-sm">
+<div class="w-6 h-6 rounded-full bg-primary-container/15 flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-primary-container text-[18px]" data-icon="info" style="font-variation-settings: 'FILL' 1;">info</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<h2 class="font-label-lg text-body-sm font-semibold text-[#292524] leading-tight">Department Booking Priority</h2>
+<p class="font-body-sm text-label-sm text-[#78716C] leading-snug">Requests are subject to venue availability and department approval.</p>
+</div>
+</section>
+<!-- Booking Form -->
+<form class="flex flex-col gap-3.5" onsubmit="event.preventDefault();">
+<!-- Event Name -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-[#292524] flex items-center gap-0.5" for="event-name">
+<span>Event Name</span>
+<span class="text-primary-container text-xs">*</span>
+</label>
+<div class="relative">
+<input class="w-full h-12 bg-surface-container-lowest border border-[#E7DED4] rounded-xl px-4 font-body-md text-body-md text-on-surface placeholder:text-outline focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container shadow-[0_2px_6px_-1px_rgba(41,37,36,0.03)] transition-colors" id="event-name" name="eventName" placeholder="Enter event title" type="text" value="Guest Lecture on AI"/>
+</div>
+</div>
+<!-- Department -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-[#292524] flex items-center gap-0.5" for="department">
+<span>Department</span>
+<span class="text-primary-container text-xs">*</span>
+</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined text-[#8E7168] absolute left-3.5 pointer-events-none text-[20px]" data-icon="account_balance">account_balance</span>
+<select class="w-full h-12 bg-surface-container-lowest border border-[#E7DED4] rounded-xl pl-11 pr-10 font-body-md text-body-md text-on-surface focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container appearance-none shadow-[0_2px_6px_-1px_rgba(41,37,36,0.03)] cursor-pointer transition-colors" id="department" name="department">
+<option selected="">Computer Science &amp; Engineering</option>
+<option>Electronics &amp; Communication</option>
+<option>Mechanical Engineering</option>
+<option>Civil &amp; Environmental Studies</option>
+<option>School of Management</option>
+</select>
+<span class="material-symbols-outlined text-[#8E7168] absolute right-3 pointer-events-none text-[20px]">expand_more</span>
+</div>
+</div>
+<!-- Date -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-[#292524] flex items-center gap-0.5" for="booking-date">
+<span>Date</span>
+<span class="text-primary-container text-xs">*</span>
+</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined text-[#8E7168] absolute left-3.5 pointer-events-none text-[20px]" data-icon="calendar_month">calendar_month</span>
+<input class="w-full h-12 bg-surface-container-lowest border border-[#E7DED4] rounded-xl pl-11 pr-4 font-body-md text-body-md text-on-surface placeholder:text-outline focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container shadow-[0_2px_6px_-1px_rgba(41,37,36,0.03)] transition-colors" id="booking-date" name="bookingDate" type="text" value="25 Sep 2026"/>
+</div>
+</div>
+<!-- Start Time & End Time -->
+<div class="grid grid-cols-2 gap-3">
+<!-- Start Time -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-[#292524] flex items-center gap-0.5" for="start-time">
+<span>Start Time</span>
+<span class="text-primary-container text-xs">*</span>
+</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined text-[#8E7168] absolute left-3 pointer-events-none text-[18px]" data-icon="schedule">schedule</span>
+<input class="w-full h-12 bg-surface-container-lowest border border-[#E7DED4] rounded-xl pl-9 pr-3 font-body-md text-body-md text-on-surface placeholder:text-outline focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container shadow-[0_2px_6px_-1px_rgba(41,37,36,0.03)] transition-colors" id="start-time" name="startTime" type="text" value="2:00 PM"/>
+</div>
+</div>
+<!-- End Time -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-[#292524] flex items-center gap-0.5" for="end-time">
+<span>End Time</span>
+<span class="text-primary-container text-xs">*</span>
+</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined text-[#8E7168] absolute left-3 pointer-events-none text-[18px]" data-icon="schedule">schedule</span>
+<input class="w-full h-12 bg-surface-container-lowest border border-[#E7DED4] rounded-xl pl-9 pr-3 font-body-md text-body-md text-on-surface placeholder:text-outline focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container shadow-[0_2px_6px_-1px_rgba(41,37,36,0.03)] transition-colors" id="end-time" name="endTime" type="text" value="4:00 PM"/>
+</div>
+</div>
+</div>
+<!-- Expected Attendees -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-[#292524] flex items-center gap-0.5" for="attendees">
+<span>Expected Attendees</span>
+<span class="text-primary-container text-xs">*</span>
+</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined text-[#8E7168] absolute left-3.5 pointer-events-none text-[20px]" data-icon="group">group</span>
+<input class="w-full h-12 bg-surface-container-lowest border border-[#E7DED4] rounded-xl pl-11 pr-4 font-body-md text-body-md text-on-surface placeholder:text-outline focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container shadow-[0_2px_6px_-1px_rgba(41,37,36,0.03)] transition-colors" id="attendees" name="attendees" type="number" value="120"/>
+</div>
+</div>
+<!-- Required Facilities -->
+<fieldset class="flex flex-col gap-2 pt-0.5">
+<legend class="font-label-md text-label-md text-[#292524] mb-1">Required Facilities</legend>
+<div class="grid grid-cols-2 gap-2.5">
+<!-- Projector (Checked) -->
+<label class="flex items-center gap-2.5 p-2 rounded-lg bg-surface-container-lowest/60 border border-[#E7DED4] cursor-pointer hover:bg-surface-container-lowest transition-colors">
+<input checked="" class="w-5 h-5 rounded-md border-[#E7DED4] text-primary-container focus:ring-0 focus:ring-offset-0 cursor-pointer accent-[#FF6835]" name="facilities" type="checkbox" value="projector"/>
+<span class="font-body-sm text-body-sm text-on-surface">Projector</span>
+</label>
+<!-- Microphone (Checked) -->
+<label class="flex items-center gap-2.5 p-2 rounded-lg bg-surface-container-lowest/60 border border-[#E7DED4] cursor-pointer hover:bg-surface-container-lowest transition-colors">
+<input checked="" class="w-5 h-5 rounded-md border-[#E7DED4] text-primary-container focus:ring-0 focus:ring-offset-0 cursor-pointer accent-[#FF6835]" name="facilities" type="checkbox" value="microphone"/>
+<span class="font-body-sm text-body-sm text-on-surface">Microphone</span>
+</label>
+<!-- AC (Unchecked) -->
+<label class="flex items-center gap-2.5 p-2 rounded-lg bg-surface-container-lowest/60 border border-[#E7DED4] cursor-pointer hover:bg-surface-container-lowest transition-colors">
+<input class="w-5 h-5 rounded-md border-[#E7DED4] text-primary-container focus:ring-0 focus:ring-offset-0 cursor-pointer accent-[#FF6835]" name="facilities" type="checkbox" value="ac"/>
+<span class="font-body-sm text-body-sm text-on-surface">AC</span>
+</label>
+<!-- Wi-Fi (Unchecked) -->
+<label class="flex items-center gap-2.5 p-2 rounded-lg bg-surface-container-lowest/60 border border-[#E7DED4] cursor-pointer hover:bg-surface-container-lowest transition-colors">
+<input class="w-5 h-5 rounded-md border-[#E7DED4] text-primary-container focus:ring-0 focus:ring-offset-0 cursor-pointer accent-[#FF6835]" name="facilities" type="checkbox" value="wifi"/>
+<span class="font-body-sm text-body-sm text-on-surface">Wi-Fi</span>
+</label>
+<!-- Smart Board (Unchecked) -->
+<label class="col-span-2 flex items-center gap-2.5 p-2 rounded-lg bg-surface-container-lowest/60 border border-[#E7DED4] cursor-pointer hover:bg-surface-container-lowest transition-colors">
+<input class="w-5 h-5 rounded-md border-[#E7DED4] text-primary-container focus:ring-0 focus:ring-offset-0 cursor-pointer accent-[#FF6835]" name="facilities" type="checkbox" value="smart_board"/>
+<span class="font-body-sm text-body-sm text-on-surface">Smart Board</span>
+</label>
+</div>
+</fieldset>
+<!-- Additional Requirements -->
+<div class="flex flex-col gap-1.5 pt-0.5">
+<label class="font-label-md text-label-md text-[#292524]" for="additional-requirements">Additional Requirements</label>
+<textarea class="w-full bg-surface-container-lowest border border-[#E7DED4] rounded-xl p-3.5 font-body-md text-body-md text-on-surface placeholder:text-outline focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container shadow-[0_2px_6px_-1px_rgba(41,37,36,0.03)] resize-none transition-colors" id="additional-requirements" name="additionalRequirements" placeholder="Any special requirements?" rows="3"></textarea>
+</div>
+<!-- Bottom Action Buttons: Reset & Check Availability -->
+<div class="flex items-center gap-3 pt-3">
+<!-- Reset Button -->
+<button class="h-12 px-6 rounded-xl bg-surface-container-lowest border border-[#E7DED4] font-label-lg text-label-lg text-[#78716C] hover:bg-[#FFF0E8] hover:text-[#292524] transition-all duration-150 active:scale-95 shadow-sm" type="reset">
+            Reset
+          </button>
+<!-- Primary CTA Button -->
+<button class="flex-1 h-12 rounded-xl bg-primary-container hover:bg-[#c94b24] text-on-primary font-label-lg text-label-lg font-semibold flex items-center justify-center gap-2 shadow-[0_4px_16px_-2px_rgba(255,104,53,0.35)] transition-all duration-150 active:scale-95" type="submit">
+<span>Check Availability</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</form>
+</div>
+</main>
+<script>
+    // Lightweight interactive enhancement for form reset confirmation
+    document.querySelector('form').addEventListener('reset', function() {
+      setTimeout(() => {
+        const eventNameInput = document.getElementById('event-name');
+        if (eventNameInput) eventNameInput.focus();
+      }, 50);
+    });
+  </script>
+</body></html>

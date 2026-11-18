@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Available Venues - Venuity</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container-high": "#efe6e4",
+            "tertiary-fixed-dim": "#aecfb0",
+            "on-tertiary": "#ffffff",
+            "outline": "#8e7168",
+            "secondary-container": "#fea619",
+            "on-secondary-container": "#684000",
+            "inverse-primary": "#ffb59e",
+            "surface-tint": "#ad3300",
+            "on-primary-fixed": "#3a0b00",
+            "inverse-on-surface": "#f8efed",
+            "on-tertiary-fixed": "#04210d",
+            "surface-bright": "#fff8f6",
+            "outline-variant": "#e2bfb5",
+            "background": "#fff8f6",
+            "surface-variant": "#e9e1df",
+            "tertiary-container": "#81a084",
+            "surface-dim": "#e1d8d6",
+            "on-secondary": "#ffffff",
+            "secondary-fixed-dim": "#ffb95f",
+            "on-primary": "#ffffff",
+            "surface": "#fff8f6",
+            "on-tertiary-fixed-variant": "#314d36",
+            "error-container": "#ffdad6",
+            "primary": "#ad3300",
+            "on-tertiary-container": "#1a3621",
+            "inverse-surface": "#342f2e",
+            "surface-container-low": "#fbf2f0",
+            "primary-container": "#ff6835",
+            "on-primary-container": "#5e1700",
+            "primary-fixed": "#ffdbd0",
+            "surface-container-lowest": "#ffffff",
+            "secondary-fixed": "#ffddb8",
+            "on-secondary-fixed": "#2a1700",
+            "error": "#ba1a1a",
+            "on-surface": "#1e1b1a",
+            "secondary": "#855300",
+            "primary-fixed-dim": "#ffb59e",
+            "tertiary": "#48654c",
+            "tertiary-fixed": "#caebcb",
+            "on-error-container": "#93000a",
+            "on-primary-fixed-variant": "#842500",
+            "on-secondary-fixed-variant": "#653e00",
+            "on-surface-variant": "#5a413a"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-sm": "0.5rem",
+            "space-lg": "1rem",
+            "margin": "1.25rem",
+            "space-xs": "0.25rem",
+            "space-md": "0.75rem",
+            "space-xl": "1.5rem",
+            "gutter": "0.75rem"
+          },
+          "fontFamily": {
+            "body-md": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "headline-xl": ["Plus Jakarta Sans"],
+            "label-lg": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "fontWeight": "500" }],
+            "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "600" }],
+            "headline-lg": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+            "headline-xl": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      line-height: 1;
+      display: inline-block;
+      vertical-align: middle;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body-md antialiased min-h-screen flex justify-center selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- Mobile Viewport Container (390px base max-w-md) -->
+<div class="w-full max-w-md bg-surface min-h-screen flex flex-col relative pb-28 shadow-xl">
+<!-- iOS Status Bar -->
+<header class="w-full px-7 pt-3 pb-1 flex justify-between items-center text-on-surface select-none">
+<span class="font-headline-sm text-[15px] font-bold tracking-tight">9:41</span>
+<div class="flex items-center gap-1.5 text-on-surface">
+<span class="material-symbols-outlined text-[17px]">signal_cellular_4_bar</span>
+<span class="material-symbols-outlined text-[17px]">wifi</span>
+<span class="material-symbols-outlined text-[20px]">battery_full</span>
+</div>
+</header>
+<!-- Top Navigation Header -->
+<div class="w-full px-5 py-3 flex items-center justify-between">
+<button aria-label="Go back" class="w-10 h-10 rounded-full bg-surface-container-lowest border border-outline-variant/60 flex items-center justify-center text-on-surface shadow-sm active:scale-95 transition-transform" type="button">
+<span class="material-symbols-outlined text-[22px]">chevron_left</span>
+</button>
+<div class="flex flex-col items-center">
+<h1 class="font-headline-md text-headline-md font-bold text-on-surface tracking-tight">Available Venues</h1>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Campus Space Finder</span>
+</div>
+<button aria-label="Open filter settings" class="w-10 h-10 rounded-full bg-surface-container-lowest border border-outline-variant/60 flex items-center justify-center text-on-surface-variant hover:text-primary active:scale-95 transition-transform shadow-sm" type="button">
+<span class="material-symbols-outlined text-[20px]">tune</span>
+</button>
+</div>
+<!-- Main Content Canvas -->
+<main class="w-full px-5 pt-2 flex flex-col gap-4">
+<!-- Search Summary Card -->
+<section class="bg-surface-container-lowest border border-outline-variant/70 rounded-2xl p-4 shadow-[0_4px_16px_-2px_rgba(41,37,36,0.04)]">
+<div class="flex items-center justify-between pb-3 border-b border-surface-container">
+<div class="flex items-center gap-2">
+<span class="w-7 h-7 rounded-lg bg-surface-container flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+</span>
+<div>
+<p class="font-headline-sm text-body-md font-semibold text-on-surface">15 October 2026</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">2:00 PM – 4:00 PM</p>
+</div>
+</div>
+<button class="text-primary-container font-label-lg text-label-lg font-semibold hover:underline flex items-center gap-0.5 active:scale-95 transition-transform" type="button">
+<span>Edit</span>
+<span class="material-symbols-outlined text-[16px]">edit</span>
+</button>
+</div>
+<div class="pt-3 flex items-center justify-between text-body-sm text-on-surface-variant">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-primary-container">group</span>
+<span class="font-label-md text-label-md text-on-surface">Attendees: 120</span>
+</div>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-primary-container">videocam</span>
+<span class="font-label-md text-label-md text-on-surface">Required: Projector</span>
+</div>
+</div>
+</section>
+<!-- Segmented Tabs -->
+<div class="grid grid-cols-2 p-1 bg-surface-container rounded-xl gap-1">
+<button class="py-2.5 px-3 rounded-lg bg-surface-container-lowest text-primary-container font-label-lg text-label-lg font-bold shadow-sm flex items-center justify-center gap-1.5 transition-all" type="button">
+<span>Available Venues</span>
+<span class="bg-primary-container/10 text-primary-container px-1.5 py-0.5 rounded-full text-[11px] font-bold">4</span>
+</button>
+<button class="py-2.5 px-3 rounded-lg text-on-surface-variant font-label-lg text-label-lg font-medium hover:text-on-surface transition-colors flex items-center justify-center" type="button">
+<span>All Venues</span>
+</button>
+</div>
+<!-- Results Header -->
+<div class="flex items-center justify-between pt-1">
+<span class="font-label-md text-label-md text-on-surface-variant font-medium">Capacity ≥ 120 Attendees</span>
+<span class="font-label-sm text-label-sm text-tertiary font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+          Real-time availability
+        </span>
+</div>
+<!-- Results List: Accommodating >= 120 Attendees -->
+<div class="flex flex-col gap-4">
+<!-- 1. Main Auditorium -->
+<article class="bg-surface-container-lowest border border-outline-variant/70 rounded-2xl overflow-hidden shadow-[0_4px_16px_-2px_rgba(41,37,36,0.04)] flex flex-col">
+<div class="relative h-44 w-full bg-surface-dim">
+<img class="w-full h-full object-cover" data-alt="Expansive modern university main auditorium theater with tiered wooden seating rows, warm golden ambient stage lighting, large central presentation projection screen, and pristine acoustic wall panels in a warm campus architecture setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4_IrYypg-vF_8mumwNTG_DRyoOj7raWMnnAq8rI0YKnqJ9jzV5P1Tt262GmEjUeDz2_3RRTceX5qzGxIs0G9MlMKyWGMUAVUa1k7BbmF41l6b2L9SyI2dUvKiIc3DQEz6mG0lTGpWmZ9QWIANGhz26uYnknFp2iK0eCxiruWEv7Meq1zHFASzZHwv8XNGrBufbHEtqBKx_rOA6R8dkW2vkFmppV1qtom4qww__VmkVQHH0NPFQTKGJw"/>
+<div class="absolute top-3 right-3">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed-variant text-label-sm font-semibold shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+                Available
+              </span>
+</div>
+<div class="absolute bottom-3 left-3 bg-inverse-surface/85 backdrop-blur-sm text-inverse-on-surface px-2.5 py-1 rounded-lg flex items-center gap-1 text-label-sm font-medium">
+<span class="material-symbols-outlined text-[15px]">people</span>
+<span>500 capacity</span>
+</div>
+</div>
+<div class="p-4 flex flex-col gap-3">
+<div class="flex items-start justify-between">
+<div>
+<h2 class="font-headline-sm text-headline-sm font-bold text-on-surface">Main Auditorium</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">North Quad Complex · Floor 1</p>
+</div>
+</div>
+<!-- Facilities -->
+<div class="flex items-center gap-4 text-on-surface-variant pt-0.5">
+<div class="flex items-center gap-1 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[17px] text-outline">videocam</span>
+<span>Projector</span>
+</div>
+<div class="flex items-center gap-1 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[17px] text-outline">mode_fan</span>
+<span>AC</span>
+</div>
+<div class="flex items-center gap-1 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[17px] text-outline">wifi</span>
+<span>Wi-Fi</span>
+</div>
+</div>
+<button class="w-full h-11 bg-primary-container text-on-primary font-label-lg text-label-lg font-semibold rounded-xl flex items-center justify-center gap-2 active:scale-98 hover:brightness-105 transition-all shadow-sm" type="button">
+<span>Select Venue</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</article>
+<!-- 2. Seminar Hall A -->
+<article class="bg-surface-container-lowest border border-outline-variant/70 rounded-2xl overflow-hidden shadow-[0_4px_16px_-2px_rgba(41,37,36,0.04)] flex flex-col">
+<div class="relative h-44 w-full bg-surface-dim">
+<img class="w-full h-full object-cover" data-alt="Tiered collegiate lecture hall with polished oak conference desks, ergonomic mesh seating, high ceilings, warm diffused recessed illumination, and dual presentation monitors tailored for academic symposiums." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEQWMF61bNJBDXtBH3KJfCXBGgEW3_c9BCn59R4umTh2aX2qdBxiMhDzeWMCpfsAcNkY30wBOh9MO2-mYPvItYU33IUSTctSTjwZLyXvi_v2HaiHqXaWomQDvlZwktkM1sfd-hM-ILhXcp2n3YdHENlCWCn8Dftpz9F_PEAwnoLzvn2VCXy9NDNWf5f2uZ5aED9gzF4rEOlc6yWULQdTRD3hRZAeaEoYCwP_ih_J43z1Z_vuxxHTsbTA"/>
+<div class="absolute top-3 right-3">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed-variant text-label-sm font-semibold shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+                Available
+              </span>
+</div>
+<div class="absolute bottom-3 left-3 bg-inverse-surface/85 backdrop-blur-sm text-inverse-on-surface px-2.5 py-1 rounded-lg flex items-center gap-1 text-label-sm font-medium">
+<span class="material-symbols-outlined text-[15px]">people</span>
+<span>150 capacity</span>
+</div>
+</div>
+<div class="p-4 flex flex-col gap-3">
+<div class="flex items-start justify-between">
+<div>
+<h2 class="font-headline-sm text-headline-sm font-bold text-on-surface">Seminar Hall A</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Engineering Annex · Room 204</p>
+</div>
+</div>
+<!-- Facilities -->
+<div class="flex items-center gap-4 text-on-surface-variant pt-0.5">
+<div class="flex items-center gap-1 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[17px] text-outline">videocam</span>
+<span>Projector</span>
+</div>
+<div class="flex items-center gap-1 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[17px] text-outline">mic</span>
+<span>Microphone</span>
+</div>
+<div class="flex items-center gap-1 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[17px] text-outline">mode_fan</span>
+<span>AC</span>
+</div>
+</div>
+<button class="w-full h-11 bg-primary-container text-on-primary font-label-lg text-label-lg font-semibold rounded-xl flex items-center justify-center gap-2 active:scale-98 hover:brightness-105 transition-all shadow-sm" type="button">
+<span>Select Venue</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</article>
+<!-- 3. Gallery 1 -->
+<article class="bg-surface-container-lowest border border-outline-variant/70 rounded-2xl overflow-hidden shadow-[0_4px_16px_-2px_rgba(41,37,36,0.04)] flex flex-col">
+<div class="relative h-44 w-full bg-surface-dim">
+<img class="w-full h-full object-cover" data-alt="Sun-drenched university art and exhibition gallery with warm terracotta accents, high industrial white ceilings, track lighting fixtures, open hardwood floors, and wide multimedia screens setup for campus conferences." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmXg1dC73HSirDm1qXvIjrQ6z0WnjGUPem-mTfYAgsAIQlFNe-6ldI3yYH8ZRL9G2PdYIYAW_JnnIDevELeEwN5e1YpLPdtzSiglZAaFa94ybkIZZzwTQnkOaf7wVVbgSQMaTcb3FIXIyzbUaX4M76iaohBJMV1afZ7tu6RvZuUxgHFMTWprmN2bpxA9YHl8yMZmm-45zcnU33QLf7bJTP5fOiZNFNIgL5MyQZeQgQ4O51w-CjH3dgHg"/>
+<div class="absolute top-3 right-3">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed-variant text-label-sm font-semibold shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+                Available
+              </span>
+</div>
+<div class="absolute bottom-3 left-3 bg-inverse-surface/85 backdrop-blur-sm text-inverse-on-surface px-2.5 py-1 rounded-lg flex items-center gap-1 text-label-sm font-medium">
+<span class="material-symbols-outlined text-[15px]">people</span>
+<span>200 capacity</span>
+</div>
+</div>
+<div class="p-4 flex flex-col gap-3">
+<div class="flex items-start justify-between">
+<div>
+<h2 class="font-headline-sm text-headline-sm font-bold text-on-surface">Gallery 1</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Fine Arts Pavilion · East Wing</p>
+</div>
+</div>
+<!-- Facilities -->
+<div class="flex items-center gap-4 text-on-surface-variant pt-0.5">
+<div class="flex items-center gap-1 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[17px] text-outline">videocam</span>
+<span>Projector</span>
+</div>
+<div class="flex items-center gap-1 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[17px] text-outline">wifi</span>
+<span>Wi-Fi</span>
+</div>
+<div class="flex items-center gap-1 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[17px] text-outline">mode_fan</span>
+<span>AC</span>
+</div>
+</div>
+<button class="w-full h-11 bg-primary-container text-on-primary font-label-lg text-label-lg font-semibold rounded-xl flex items-center justify-center gap-2 active:scale-98 hover:brightness-105 transition-all shadow-sm" type="button">
+<span>Select Venue</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</article>
+<!-- 4. Gallery 2 -->
+<article class="bg-surface-container-lowest border border-outline-variant/70 rounded-2xl overflow-hidden shadow-[0_4px_16px_-2px_rgba(41,37,36,0.04)] flex flex-col">
+<div class="relative h-44 w-full bg-surface-dim">
+<img class="w-full h-full object-cover" data-alt="Bright modern multipurpose hall with warm cream interior walls, flexible conference table seating arrangement, overhead audiovisual projector rigging, and soft natural daylight streaming through large courtyard windows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBx6xcT2aWWiRVsCfVB9p4LIaqhPsI4zLLHZnwe0VkKoeetXLnrRYCpZlHVqpyjuiGhlElbpa3acCUdC9GB4xwHUIe0lIlPQ71T-eQRFWk05EHNoipfU3NDHBCLW7SxrVbPGfarOWlzizviMbhrx9uW5SUXjN1cJXohPDyjfpIkvpBfi7DM5x4Y-twHoKtxMu0ZXEvbZfFfhzoe2SzTANw78Sj1mtxaoIHBJ5bTfobZT-H8T7qQ65jBw"/>
+<div class="absolute top-3 right-3">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed-variant text-label-sm font-semibold shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+                Available
+              </span>
+</div>
+<div class="absolute bottom-3 left-3 bg-inverse-surface/85 backdrop-blur-sm text-inverse-on-surface px-2.5 py-1 rounded-lg flex items-center gap-1 text-label-sm font-medium">
+<span class="material-symbols-outlined text-[15px]">people</span>
+<span>120 capacity</span>
+</div>
+</div>
+<div class="p-4 flex flex-col gap-3">
+<div class="flex items-start justify-between">
+<div>
+<h2 class="font-headline-sm text-headline-sm font-bold text-on-surface">Gallery 2</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Fine Arts Pavilion · West Wing</p>
+</div>
+</div>
+<!-- Facilities -->
+<div class="flex items-center gap-4 text-on-surface-variant pt-0.5">
+<div class="flex items-center gap-1 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[17px] text-outline">videocam</span>
+<span>Projector</span>
+</div>
+<div class="flex items-center gap-1 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[17px] text-outline">mic</span>
+<span>Microphone</span>
+</div>
+<div class="flex items-center gap-1 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[17px] text-outline">mode_fan</span>
+<span>AC</span>
+</div>
+</div>
+<button class="w-full h-11 bg-primary-container text-on-primary font-label-lg text-label-lg font-semibold rounded-xl flex items-center justify-center gap-2 active:scale-98 hover:brightness-105 transition-all shadow-sm" type="button">
+<span>Select Venue</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</article>
+</div>
+<!-- Footer Matching Info -->
+<footer class="py-4 text-center">
+<p class="font-body-sm text-body-sm text-on-surface-variant font-medium">4 venues match your requirements</p>
+<p class="font-label-sm text-label-sm text-outline mt-0.5">Seminar Hall B (100 capacity) excluded</p>
+</footer>
+</main>
+<!-- Bottom Navigation Bar (Shared Component Anchor) -->
+<!-- Screen intent is Venues discovery: active tab is 'Venues' -->
+<nav class="fixed bottom-0 left-0 right-0 w-full z-50 flex justify-around items-center px-3 py-2 bg-surface-container-lowest border-t border-outline-variant max-w-md mx-auto shadow-[0_-4px_20px_0_rgba(41,37,36,0.05)]">
+<!-- Home -->
+<button class="flex flex-col items-center justify-center text-outline gap-1 py-1 active:scale-95 transition-transform duration-150 hover:text-primary" type="button">
+<span class="material-symbols-outlined text-[22px]">home</span>
+<span class="font-label-sm text-label-sm font-medium">Home</span>
+</button>
+<!-- Venues (ACTIVE) -->
+<button class="flex flex-col items-center justify-center text-primary font-semibold gap-1 py-1 active:scale-95 transition-transform duration-150" type="button">
+<span class="material-symbols-outlined text-[22px]" style="font-variation-settings: 'FILL' 1;">apartment</span>
+<span class="font-label-sm text-label-sm font-medium text-primary">Venues</span>
+</button>
+<!-- Bookings -->
+<button class="flex flex-col items-center justify-center text-outline gap-1 py-1 active:scale-95 transition-transform duration-150 hover:text-primary" type="button">
+<span class="material-symbols-outlined text-[22px]">event_available</span>
+<span class="font-label-sm text-label-sm font-medium">Bookings</span>
+</button>
+<!-- Calendar -->
+<button class="flex flex-col items-center justify-center text-outline gap-1 py-1 active:scale-95 transition-transform duration-150 hover:text-primary" type="button">
+<span class="material-symbols-outlined text-[22px]">calendar_month</span>
+<span class="font-label-sm text-label-sm font-medium">Calendar</span>
+</button>
+<!-- More -->
+<button class="flex flex-col items-center justify-center text-outline gap-1 py-1 active:scale-95 transition-transform duration-150 hover:text-primary" type="button">
+<span class="material-symbols-outlined text-[22px]">menu</span>
+<span class="font-label-sm text-label-sm font-medium">More</span>
+</button>
+</nav>
+</div>
+</body></html>
