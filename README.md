@@ -91,23 +91,6 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ---
 
-## 🔑 Demo & Test Credentials
-
-The system comes pre-provisioned with role-based accounts for development and testing:
-
-| Role | Name | Email | Password |
-| :--- | :--- | :--- | :--- |
-| **Admin** | Rajanna R C | `rajanna.r.c@venuity.local` | `Venuity#Rajanna2026` |
-| **Admin** | Placement Admin | `Placement@sjbit.edu.in` | `Venuity#Placement2026` |
-| **HOD** | Dr. Krishna A N | `krishna.a.n@venuity.local` | `Venuity#Krishna2026` |
-| **Faculty** | Dr. Naveena C | `naveena.c@venuity.local` | `Venuity#Naveena2026` |
-| **Faculty** | Dr. Bindiya M K | `bindiya.m.k@venuity.local` | `Venuity#Bindiya2026` |
-| **Faculty** | Dr. Ajay B N | `ajay.b.n@venuity.local` | `Venuity#Ajay2026` |
-
-> *Note: All 45 pre-provisioned faculty accounts follow the password scheme `Venuity#<FirstName>2026`.*
-
----
-
 ## 📁 Project Structure
 
 ```text
